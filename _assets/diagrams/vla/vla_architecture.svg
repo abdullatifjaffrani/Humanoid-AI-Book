@@ -1,0 +1,81 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <title>VLA Architecture</title>
+  <desc>Diagram showing the architecture of Vision-Language-Action systems</desc>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="20" text-anchor="middle" fill="#2c3e50">Vision-Language-Action (VLA) Architecture</text>
+
+  <!-- Vision Module -->
+  <rect x="100" y="100" width="180" height="100" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="10"/>
+  <text x="190" y="130" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Vision Module</text>
+  <text x="190" y="150" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Object Detection</text>
+  <text x="190" y="165" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Scene Understanding</text>
+  <text x="190" y="180" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(YOLO, Segmentation, etc.)</text>
+
+  <!-- Language Module -->
+  <rect x="310" y="100" width="180" height="100" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="10"/>
+  <text x="400" y="130" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Language Module</text>
+  <text x="400" y="150" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">NLP Processing</text>
+  <text x="400" y="165" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Command Understanding</text>
+  <text x="400" y="180" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(BERT, GPT, etc.)</text>
+
+  <!-- Action Module -->
+  <rect x="520" y="100" width="180" height="100" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="10"/>
+  <text x="610" y="130" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Action Module</text>
+  <text x="610" y="150" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Planning & Control</text>
+  <text x="610" y="165" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Manipulation & Navigation</text>
+  <text x="610" y="180" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Trajectory, IK, etc.)</text>
+
+  <!-- Fusion Layer -->
+  <rect x="250" y="230" width="300" height="80" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="10"/>
+  <text x="400" y="260" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Multimodal Fusion</text>
+  <text x="400" y="275" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Vision-Language Integration</text>
+  <text x="400" y="290" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(CLIP, VLMs, etc.)</text>
+
+  <!-- Robot Control -->
+  <rect x="300" y="340" width="200" height="70" fill="#f9e79f" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="400" y="370" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Robot Control</text>
+  <text x="400" y="385" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Navigation, Manipulation, etc.)</text>
+
+  <!-- Environment -->
+  <rect x="325" y="440" width="150" height="60" fill="#f8c471" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="400" y="470" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Environment</text>
+  <text x="400" y="485" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Real or Simulated)</text>
+
+  <!-- Input/Output Labels -->
+  <text x="190" y="90" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Visual Input</text>
+  <text x="400" y="90" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Language Input</text>
+  <text x="610" y="90" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Action Output</text>
+
+  <!-- Arrows -->
+  <line x1="190" y1="200" x2="400" y2="230" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="200" x2="400" y2="230" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="610" y1="200" x2="400" y2="230" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="310" x2="400" y2="340" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="410" x2="400" y2="440" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="500" x2="400" y2="530" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <text x="420" y="520" font-family="Arial" font-size="10" text-anchor="start" fill="#7f8c8d">Feedback</text>
+
+  <!-- Arrowhead Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="50" y="450" width="180" height="100" fill="#ffffff" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="140" y="470" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Legend</text>
+  <rect x="60" y="485" width="15" height="15" fill="#e8f4fd" stroke="#3498db"/>
+  <text x="85" y="497" font-family="Arial" font-size="10" fill="#2c3e50">Processing Modules</text>
+  <rect x="60" y="505" width="15" height="15" fill="#d5f5e3" stroke="#27ae60"/>
+  <text x="85" y="517" font-family="Arial" font-size="10" fill="#2c3e50">Fusion Layer</text>
+  <rect x="60" y="525" width="15" height="15" fill="#f9e79f" stroke="#f39c12"/>
+  <text x="85" y="537" font-family="Arial" font-size="10" fill="#2c3e50">Control</text>
+  <rect x="60" y="545" width="15" height="15" fill="#f8c471" stroke="#e67e22"/>
+  <text x="85" y="557" font-family="Arial" font-size="10" fill="#2c3e50">Environment</text>
+</svg>

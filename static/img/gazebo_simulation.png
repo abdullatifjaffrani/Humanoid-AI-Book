@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#e6f3ff"/>
+  <rect x="50" y="50" width="700" height="300" fill="white" stroke="#ccc" stroke-width="2" rx="10"/>
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="bold">
+    Gazebo Simulation Environment
+  </text>
+  <text x="400" y="150" font-family="Arial, sans-serif" font-size="16" fill="#4b5563" text-anchor="middle">
+    Physics Simulation (ODE, Bullet, Simbody)
+  </text>
+  <text x="400" y="180" font-family="Arial, sans-serif" font-size="16" fill="#4b5563" text-anchor="middle">
+    3D Rendering and Visualization
+  </text>
+  <text x="400" y="210" font-family="Arial, sans-serif" font-size="16" fill="#4b5563" text-anchor="middle">
+    Sensor Simulation (Cameras, LIDAR, IMU)
+  </text>
+  <text x="400" y="240" font-family="Arial, sans-serif" font-size="16" fill="#4b5563" text-anchor="middle">
+    Plugin System for Custom Functionality
+  </text>
+</svg>

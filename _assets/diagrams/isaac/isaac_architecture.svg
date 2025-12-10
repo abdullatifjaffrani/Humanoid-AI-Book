@@ -1,0 +1,80 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <title>Isaac Architecture</title>
+  <desc>Diagram showing the architecture of NVIDIA Isaac platform for robotics</desc>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="20" text-anchor="middle" fill="#2c3e50">NVIDIA Isaac Architecture</text>
+
+  <!-- Isaac ROS -->
+  <rect x="100" y="80" width="200" height="100" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="10"/>
+  <text x="200" y="110" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Isaac ROS</text>
+  <text x="200" y="130" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">GPU-accelerated</text>
+  <text x="200" y="145" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">ROS 2 Packages</text>
+  <text x="200" y="160" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Detection, Mapping, etc.)</text>
+
+  <!-- Isaac Navigation -->
+  <rect x="400" y="80" width="300" height="100" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="10"/>
+  <text x="550" y="110" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Isaac Navigation</text>
+  <text x="550" y="130" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">GPU-accelerated SLAM</text>
+  <text x="550" y="145" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">Path Planning & Control</text>
+  <text x="550" y="160" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Carter, A100, Orin)</text>
+
+  <!-- Isaac Sim -->
+  <rect x="250" y="200" width="300" height="80" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="10"/>
+  <text x="400" y="230" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50">Isaac Sim</text>
+  <text x="400" y="245" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">GPU-accelerated Simulation</text>
+  <text x="400" y="260" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(PhysX, RTX rendering)</text>
+
+  <!-- GPU Hardware -->
+  <rect x="300" y="300" width="200" height="60" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="400" y="325" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">GPU Hardware</text>
+  <text x="400" y="340" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Jetson Orin, RTX A6000, etc.)</text>
+
+  <!-- Robot Hardware -->
+  <rect x="150" y="400" width="150" height="60" fill="#f9e79f" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="225" y="425" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Robot Hardware</text>
+  <text x="225" y="440" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Motors, Sensors, etc.)</text>
+
+  <!-- Isaac Apps -->
+  <rect x="450" y="400" width="200" height="60" fill="#f9e79f" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="550" y="425" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Isaac Apps</text>
+  <text x="550" y="440" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Warehouse, AMR, etc.)</text>
+
+  <!-- Isaac Systems -->
+  <rect x="325" y="480" width="150" height="50" fill="#f8c471" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="400" y="505" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Isaac Systems</text>
+  <text x="400" y="520" font-family="Arial" font-size="10" text-anchor="middle" fill="#7f8c8d">(Management, Tools)</text>
+
+  <!-- Arrows -->
+  <line x1="300" y1="130" x2="400" y2="130" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="200" y1="180" x2="200" y2="200" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="180" x2="550" y2="200" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="280" x2="400" y2="300" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="225" y1="300" x2="225" y2="400" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="300" x2="550" y2="400" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="325" y1="430" x2="325" y2="480" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="475" y1="430" x2="475" y2="480" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrowhead Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="50" y="450" width="180" height="100" fill="#ffffff" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="140" y="470" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">Legend</text>
+  <rect x="60" y="485" width="15" height="15" fill="#e8f4fd" stroke="#3498db"/>
+  <text x="85" y="497" font-family="Arial" font-size="10" fill="#2c3e50">Isaac Components</text>
+  <rect x="60" y="505" width="15" height="15" fill="#d5f5e3" stroke="#27ae60"/>
+  <text x="85" y="517" font-family="Arial" font-size="10" fill="#2c3e50">GPU Hardware</text>
+  <rect x="60" y="525" width="15" height="15" fill="#f9e79f" stroke="#f39c12"/>
+  <text x="85" y="537" font-family="Arial" font-size="10" fill="#2c3e50">Hardware/Apps</text>
+  <rect x="60" y="545" width="15" height="15" fill="#f8c471" stroke="#e67e22"/>
+  <text x="85" y="557" font-family="Arial" font-size="10" fill="#2c3e50">Systems</text>
+</svg>

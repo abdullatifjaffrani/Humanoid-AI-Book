@@ -13,11 +13,11 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Deployment settings
-  url: "https://humanide-ai.github.io",
-  baseUrl: "/Humanide-AI-Book/",
+  url: "https://abdullatifjaffrani.github.io",
+  baseUrl: "/Humanoid-AI-Book/",
 
-  organizationName: "humanide-ai",
-  projectName: "Humanide-AI-Book",
+  organizationName: "abdullatifjaffrani",
+  projectName: "Humanoid-AI-Book",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -35,7 +35,7 @@ const config = {
         docs: {
           sidebarPath: "./sidebars.js",
           editUrl:
-            "https://github.com/humanide-ai/Humanide-AI-Book/tree/main/",
+            "https://github.com/abdullatifjaffrani/Humanoid-AI-Book/tree/main/",
         },
         blog: false, // No blog
         theme: {
@@ -64,7 +64,7 @@ const config = {
             label: "Textbook",
           },
           {
-            href: "https://github.com/humanide-ai/Humanide-AI-Book",
+            href: "https://github.com/abdullatifjaffrani/Humanoid-AI-Book",
             label: "GitHub",
             position: "right",
           },
@@ -101,7 +101,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/humanide-ai/Humanide-AI-Book",
+                href: "https://github.com/abdullatifjaffrani/Humanoid-AI-Book",
               },
             ],
           },

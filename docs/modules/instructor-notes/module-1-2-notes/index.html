@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-modules/instructor-notes/module-1-2-notes" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">Instructor Notes - Modules 1 &amp; 2 | Physical AI &amp; Humanoid Robotics Textbook</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/instructor-notes/module-1-2-notes"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Instructor Notes - Modules 1 &amp; 2 | Physical AI &amp; Humanoid Robotics Textbook"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/Humanoid-AI-Book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/instructor-notes/module-1-2-notes"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/instructor-notes/module-1-2-notes" hreflang="en"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/instructor-notes/module-1-2-notes" hreflang="x-default"><link rel="stylesheet" href="/Humanoid-AI-Book/assets/css/styles.f5ce8ed2.css">
+<script src="/Humanoid-AI-Book/assets/js/runtime~main.eda54158.js" defer="defer"></script>
+<script src="/Humanoid-AI-Book/assets/js/main.748b95ec.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Humanoid-AI-Book/"><div class="navbar__logo"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--light_rzkv"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--dark_mMAk"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/Humanoid-AI-Book/docs/intro">Textbook</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Instructor Notes: Modules 1 &amp; 2</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>This document provides guidance for instructors teaching Modules 1 (ROS 2 Foundations) and Module 2 (Gazebo/Unity Simulation) of the Physical AI &amp; Humanoid Robotics Textbook. These notes include learning objectives, teaching strategies, common student challenges, assessment methods, and additional resources.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="module-1-ros-2-foundations---course-delivery-guide">Module 1: ROS 2 Foundations - Course Delivery Guide<a href="#module-1-ros-2-foundations---course-delivery-guide" class="hash-link" aria-label="Direct link to Module 1: ROS 2 Foundations - Course Delivery Guide" title="Direct link to Module 1: ROS 2 Foundations - Course Delivery Guide">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="learning-objectives-alignment">Learning Objectives Alignment<a href="#learning-objectives-alignment" class="hash-link" aria-label="Direct link to Learning Objectives Alignment" title="Direct link to Learning Objectives Alignment">​</a></h3>
+<p><strong>Week 1 - Introduction to ROS 2:</strong></p>
+<ul>
+<li>Students should understand the fundamental concepts of ROS 2 architecture</li>
+<li>Students should be able to distinguish between ROS 1 and ROS 2</li>
+<li>Students should complete basic ROS 2 environment setup</li>
+</ul>
+<p><strong>Week 2 - ROS Nodes and Services:</strong></p>
+<ul>
+<li>Students should create and run nodes in both Python and C++</li>
+<li>Students should implement service-based communication between nodes</li>
+<li>Students should use parameters for node configuration</li>
+</ul>
+<p><strong>Week 3 - ROS Topics and Messages:</strong></p>
+<ul>
+<li>Students should implement topic-based communication between nodes</li>
+<li>Students should create and use custom message types</li>
+<li>Students should configure Quality of Service (QoS) settings</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="teaching-strategies">Teaching Strategies<a href="#teaching-strategies" class="hash-link" aria-label="Direct link to Teaching Strategies" title="Direct link to Teaching Strategies">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="active-learning-approaches">Active Learning Approaches<a href="#active-learning-approaches" class="hash-link" aria-label="Direct link to Active Learning Approaches" title="Direct link to Active Learning Approaches">​</a></h4>
+<ol>
+<li><strong>Live Coding Sessions</strong>: Demonstrate ROS 2 concepts through live coding examples</li>
+<li><strong>Peer Programming</strong>: Have students work in pairs to create simple ROS 2 nodes</li>
+<li><strong>Problem-Based Learning</strong>: Present real-world robotics problems that require ROS 2 solutions</li>
+<li><strong>Interactive Demonstrations</strong>: Use simulation environments to visualize ROS 2 concepts</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="assessment-methods">Assessment Methods<a href="#assessment-methods" class="hash-link" aria-label="Direct link to Assessment Methods" title="Direct link to Assessment Methods">​</a></h4>
+<ol>
+<li><strong>Formative Assessments</strong>: Weekly quizzes on ROS 2 concepts</li>
+<li><strong>Practical Examinations</strong>: Students create and demonstrate working ROS 2 systems</li>
+<li><strong>Peer Reviews</strong>: Students evaluate each other&#x27;s ROS 2 implementations</li>
+<li><strong>Project-Based Assessment</strong>: Students complete the Lab 1 exercise independently</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="common-student-challenges">Common Student Challenges<a href="#common-student-challenges" class="hash-link" aria-label="Direct link to Common Student Challenges" title="Direct link to Common Student Challenges">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="technical-challenges">Technical Challenges<a href="#technical-challenges" class="hash-link" aria-label="Direct link to Technical Challenges" title="Direct link to Technical Challenges">​</a></h4>
+<ul>
+<li><strong>Environment Setup</strong>: Students may struggle with ROS 2 installation and environment configuration<!-- -->
+<ul>
+<li><em>Solution</em>: Provide detailed setup guides and virtual machine images</li>
+</ul>
+</li>
+<li><strong>Asynchronous Programming</strong>: Understanding publish/subscribe patterns<!-- -->
+<ul>
+<li><em>Solution</em>: Use visual aids and analogies to explain message passing</li>
+</ul>
+</li>
+<li><strong>Debugging</strong>: Difficulty troubleshooting ROS 2 communication issues<!-- -->
+<ul>
+<li><em>Solution</em>: Teach systematic debugging approaches using ROS 2 tools</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="conceptual-challenges">Conceptual Challenges<a href="#conceptual-challenges" class="hash-link" aria-label="Direct link to Conceptual Challenges" title="Direct link to Conceptual Challenges">​</a></h4>
+<ul>
+<li><strong>Node Architecture</strong>: Understanding the relationship between nodes, packages, and workspaces<!-- -->
+<ul>
+<li><em>Solution</em>: Use architectural diagrams and hands-on exercises</li>
+</ul>
+</li>
+<li><strong>Message Types</strong>: Distinguishing between different communication patterns<!-- -->
+<ul>
+<li><em>Solution</em>: Create comparison tables and practical examples</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="laboratory-session-guidelines">Laboratory Session Guidelines<a href="#laboratory-session-guidelines" class="hash-link" aria-label="Direct link to Laboratory Session Guidelines" title="Direct link to Laboratory Session Guidelines">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="lab-1-ros-basics-exercise">Lab 1: ROS Basics Exercise<a href="#lab-1-ros-basics-exercise" class="hash-link" aria-label="Direct link to Lab 1: ROS Basics Exercise" title="Direct link to Lab 1: ROS Basics Exercise">​</a></h4>
+<ul>
+<li><strong>Duration</strong>: 2-3 hours depending on student experience</li>
+<li><strong>Prerequisites</strong>: Students should have completed Weeks 1-3 content</li>
+<li><strong>Learning Outcomes</strong>: Students will create a complete ROS 2 communication system</li>
+<li><strong>Assessment</strong>: Students demonstrate working publisher-subscriber system with custom messages</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="laboratory-setup-requirements">Laboratory Setup Requirements<a href="#laboratory-setup-requirements" class="hash-link" aria-label="Direct link to Laboratory Setup Requirements" title="Direct link to Laboratory Setup Requirements">​</a></h4>
+<ul>
+<li>ROS 2 Humble Hawksbill installed on all lab computers</li>
+<li>Network configuration allowing multi-machine communication</li>
+<li>Backup virtual machines for students with setup issues</li>
+<li>Pre-configured workspace templates</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="module-1-assessment-rubric">Module 1 Assessment Rubric<a href="#module-1-assessment-rubric" class="hash-link" aria-label="Direct link to Module 1 Assessment Rubric" title="Direct link to Module 1 Assessment Rubric">​</a></h3>
+<table><thead><tr><th>Criteria</th><th>Excellent (4)</th><th>Proficient (3)</th><th>Developing (2)</th><th>Beginning (1)</th></tr></thead><tbody><tr><td>Node Implementation</td><td>Creates efficient, well-documented nodes with proper error handling</td><td>Creates functional nodes with basic documentation</td><td>Creates basic nodes with some functionality issues</td><td>Struggles to create working nodes</td></tr><tr><td>Communication</td><td>Implements multiple communication patterns effectively</td><td>Implements required communication patterns</td><td>Implements basic communication with issues</td><td>Unable to implement communication</td></tr><tr><td>Message Design</td><td>Creates well-designed custom messages with appropriate data types</td><td>Creates functional custom messages</td><td>Creates basic custom messages</td><td>Struggles with message design</td></tr><tr><td>Debugging</td><td>Efficiently troubleshoots complex issues using ROS 2 tools</td><td>Troubleshoots most issues using appropriate tools</td><td>Uses basic debugging approaches</td><td>Struggles with debugging</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="module-2-gazebounity-simulation---course-delivery-guide">Module 2: Gazebo/Unity Simulation - Course Delivery Guide<a href="#module-2-gazebounity-simulation---course-delivery-guide" class="hash-link" aria-label="Direct link to Module 2: Gazebo/Unity Simulation - Course Delivery Guide" title="Direct link to Module 2: Gazebo/Unity Simulation - Course Delivery Guide">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="learning-objectives-alignment-1">Learning Objectives Alignment<a href="#learning-objectives-alignment-1" class="hash-link" aria-label="Direct link to Learning Objectives Alignment" title="Direct link to Learning Objectives Alignment">​</a></h3>
+<p><strong>Week 4 - Simulation Basics:</strong></p>
+<ul>
+<li>Students should understand fundamental concepts of robotics simulation</li>
+<li>Students should compare different simulation platforms</li>
+<li>Students should set up basic simulation environments</li>
+</ul>
+<p><strong>Week 5 - Gazebo Environments:</strong></p>
+<ul>
+<li>Students should design and create custom simulation environments</li>
+<li>Students should configure lighting, textures, and materials</li>
+<li>Students should implement environment-specific physics properties</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="teaching-strategies-1">Teaching Strategies<a href="#teaching-strategies-1" class="hash-link" aria-label="Direct link to Teaching Strategies" title="Direct link to Teaching Strategies">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="simulation-specific-approaches">Simulation-Specific Approaches<a href="#simulation-specific-approaches" class="hash-link" aria-label="Direct link to Simulation-Specific Approaches" title="Direct link to Simulation-Specific Approaches">​</a></h4>
+<ol>
+<li><strong>Visual Learning</strong>: Use screen sharing to demonstrate Gazebo interface and features</li>
+<li><strong>Progressive Complexity</strong>: Start with simple environments and gradually add complexity</li>
+<li><strong>Real-World Connection</strong>: Show how simulation relates to real robot development</li>
+<li><strong>Collaborative Design</strong>: Have students work together to design complex environments</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="integration-with-module-1">Integration with Module 1<a href="#integration-with-module-1" class="hash-link" aria-label="Direct link to Integration with Module 1" title="Direct link to Integration with Module 1">​</a></h4>
+<ul>
+<li>Connect ROS 2 concepts from Module 1 with simulation implementation</li>
+<li>Demonstrate how ROS 2 nodes interact with simulated robots</li>
+<li>Show how simulation can be used to test ROS 2 systems</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="common-student-challenges-1">Common Student Challenges<a href="#common-student-challenges-1" class="hash-link" aria-label="Direct link to Common Student Challenges" title="Direct link to Common Student Challenges">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="technical-challenges-1">Technical Challenges<a href="#technical-challenges-1" class="hash-link" aria-label="Direct link to Technical Challenges" title="Direct link to Technical Challenges">​</a></h4>
+<ul>
+<li><strong>Performance Issues</strong>: Simulation may run slowly on older hardware<!-- -->
+<ul>
+<li><em>Solution</em>: Provide optimization tips and alternative configurations</li>
+</ul>
+</li>
+<li><strong>Model Creation</strong>: Difficulty creating complex robot models<!-- -->
+<ul>
+<li><em>Solution</em>: Provide template models and step-by-step tutorials</li>
+</ul>
+</li>
+<li><strong>Physics Tuning</strong>: Challenges with configuring realistic physics properties<!-- -->
+<ul>
+<li><em>Solution</em>: Provide example configurations and testing procedures</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="conceptual-challenges-1">Conceptual Challenges<a href="#conceptual-challenges-1" class="hash-link" aria-label="Direct link to Conceptual Challenges" title="Direct link to Conceptual Challenges">​</a></h4>
+<ul>
+<li><strong>Coordinate Systems</strong>: Understanding different coordinate frames in simulation<!-- -->
+<ul>
+<li><em>Solution</em>: Use visual aids and hands-on exercises with tf transforms</li>
+</ul>
+</li>
+<li><strong>Realism vs Performance</strong>: Balancing visual quality with simulation speed<!-- -->
+<ul>
+<li><em>Solution</em>: Discuss trade-offs and optimization strategies</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="laboratory-session-guidelines-1">Laboratory Session Guidelines<a href="#laboratory-session-guidelines-1" class="hash-link" aria-label="Direct link to Laboratory Session Guidelines" title="Direct link to Laboratory Session Guidelines">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="lab-2-simulation-exercise">Lab 2: Simulation Exercise<a href="#lab-2-simulation-exercise" class="hash-link" aria-label="Direct link to Lab 2: Simulation Exercise" title="Direct link to Lab 2: Simulation Exercise">​</a></h4>
+<ul>
+<li><strong>Duration</strong>: 3-4 hours for comprehensive implementation</li>
+<li><strong>Prerequisites</strong>: Students should have completed Modules 1 and Week 4-5 of Module 2</li>
+<li><strong>Learning Outcomes</strong>: Students will create a complete simulation environment with navigation</li>
+<li><strong>Assessment</strong>: Students demonstrate robot navigation in custom environment</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="laboratory-setup-requirements-1">Laboratory Setup Requirements<a href="#laboratory-setup-requirements-1" class="hash-link" aria-label="Direct link to Laboratory Setup Requirements" title="Direct link to Laboratory Setup Requirements">​</a></h4>
+<ul>
+<li>Gazebo Garden installed on all lab computers</li>
+<li>Adequate GPU resources for visual rendering</li>
+<li>Network configuration for multi-robot simulation</li>
+<li>Backup simulation environments for troubleshooting</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="module-2-assessment-rubric">Module 2 Assessment Rubric<a href="#module-2-assessment-rubric" class="hash-link" aria-label="Direct link to Module 2 Assessment Rubric" title="Direct link to Module 2 Assessment Rubric">​</a></h3>
+<table><thead><tr><th>Criteria</th><th>Excellent (4)</th><th>Proficient (3)</th><th>Developing (2)</th><th>Beginning (1)</th></tr></thead><tbody><tr><td>Environment Design</td><td>Creates complex, realistic environments with proper physics</td><td>Creates functional environments with good design</td><td>Creates basic environments with some issues</td><td>Struggles to create working environments</td></tr><tr><td>Model Integration</td><td>Integrates complex models with proper URDF/SDF</td><td>Integrates models correctly</td><td>Integrates basic models</td><td>Struggles with model integration</td></tr><tr><td>Physics Configuration</td><td>Configures realistic physics properties effectively</td><td>Configures appropriate physics properties</td><td>Configures basic physics with issues</td><td>Unable to configure physics</td></tr><tr><td>ROS Integration</td><td>Seamlessly integrates simulation with ROS 2 systems</td><td>Integrates simulation with ROS 2 effectively</td><td>Integrates with basic functionality</td><td>Struggles with integration</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cross-module-integration">Cross-Module Integration<a href="#cross-module-integration" class="hash-link" aria-label="Direct link to Cross-Module Integration" title="Direct link to Cross-Module Integration">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="connecting-module-1-and-2">Connecting Module 1 and 2<a href="#connecting-module-1-and-2" class="hash-link" aria-label="Direct link to Connecting Module 1 and 2" title="Direct link to Connecting Module 1 and 2">​</a></h3>
+<ul>
+<li>ROS 2 nodes control simulated robots in Gazebo environments</li>
+<li>Topics and services enable communication between real and simulated systems</li>
+<li>Parameters configure both real and simulated robot behavior</li>
+<li>Custom messages work in both real and simulated environments</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="capstone-preparation">Capstone Preparation<a href="#capstone-preparation" class="hash-link" aria-label="Direct link to Capstone Preparation" title="Direct link to Capstone Preparation">​</a></h3>
+<ul>
+<li>Both modules prepare students for integrated robotics systems</li>
+<li>Simulation provides safe testing environment for complex ROS 2 systems</li>
+<li>Students can iterate quickly on algorithms in simulation before real-world testing</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additional-resources">Additional Resources<a href="#additional-resources" class="hash-link" aria-label="Direct link to Additional Resources" title="Direct link to Additional Resources">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="for-instructors">For Instructors<a href="#for-instructors" class="hash-link" aria-label="Direct link to For Instructors" title="Direct link to For Instructors">​</a></h3>
+<ul>
+<li><strong>ROS 2 Documentation</strong>: Official ROS 2 tutorials and API documentation</li>
+<li><strong>Gazebo Tutorials</strong>: Official Gazebo simulation tutorials</li>
+<li><strong>Sample Solutions</strong>: Complete solutions for all exercises and labs</li>
+<li><strong>Assessment Tools</strong>: Automated grading scripts for ROS 2 exercises</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="for-students">For Students<a href="#for-students" class="hash-link" aria-label="Direct link to For Students" title="Direct link to For Students">​</a></h3>
+<ul>
+<li><strong>Setup Guides</strong>: Detailed installation and configuration guides</li>
+<li><strong>Troubleshooting Guide</strong>: Common issues and solutions</li>
+<li><strong>Video Tutorials</strong>: Screencasts of key concepts and procedures</li>
+<li><strong>Community Resources</strong>: Links to ROS and Gazebo communities</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="course-scheduling-recommendations">Course Scheduling Recommendations<a href="#course-scheduling-recommendations" class="hash-link" aria-label="Direct link to Course Scheduling Recommendations" title="Direct link to Course Scheduling Recommendations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="standard-14-week-curriculum">Standard 14-Week Curriculum<a href="#standard-14-week-curriculum" class="hash-link" aria-label="Direct link to Standard 14-Week Curriculum" title="Direct link to Standard 14-Week Curriculum">​</a></h3>
+<ul>
+<li><strong>Weeks 1-3</strong>: Module 1 - ROS 2 Foundations</li>
+<li><strong>Weeks 4-5</strong>: Module 2 - Gazebo/Unity Simulation</li>
+<li><strong>Week 6</strong>: Integration and review</li>
+<li><strong>Week 7</strong>: Midterm assessment</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="accelerated-7-week-curriculum">Accelerated 7-Week Curriculum<a href="#accelerated-7-week-curriculum" class="hash-link" aria-label="Direct link to Accelerated 7-Week Curriculum" title="Direct link to Accelerated 7-Week Curriculum">​</a></h3>
+<ul>
+<li><strong>Weeks 1-2</strong>: Intensive Module 1 coverage</li>
+<li><strong>Weeks 3-4</strong>: Intensive Module 2 coverage</li>
+<li><strong>Week 5</strong>: Integration and advanced topics</li>
+<li><strong>Week 6-7</strong>: Project work and assessment</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flexible-scheduling-options">Flexible Scheduling Options<a href="#flexible-scheduling-options" class="hash-link" aria-label="Direct link to Flexible Scheduling Options" title="Direct link to Flexible Scheduling Options">​</a></h3>
+<ul>
+<li><strong>Self-Paced</strong>: Students progress through modules at their own speed</li>
+<li><strong>Flipped Classroom</strong>: Students review content before class, use class time for hands-on work</li>
+<li><strong>Project-Based</strong>: Integrate concepts through ongoing robotics project</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="technology-requirements">Technology Requirements<a href="#technology-requirements" class="hash-link" aria-label="Direct link to Technology Requirements" title="Direct link to Technology Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minimum-hardware">Minimum Hardware<a href="#minimum-hardware" class="hash-link" aria-label="Direct link to Minimum Hardware" title="Direct link to Minimum Hardware">​</a></h3>
+<ul>
+<li>8GB RAM (16GB recommended)</li>
+<li>Modern multi-core processor</li>
+<li>Dedicated GPU with OpenGL 3.3+ support</li>
+<li>20GB free disk space</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="software-dependencies">Software Dependencies<a href="#software-dependencies" class="hash-link" aria-label="Direct link to Software Dependencies" title="Direct link to Software Dependencies">​</a></h3>
+<ul>
+<li>Ubuntu 22.04 LTS or equivalent Linux distribution</li>
+<li>ROS 2 Humble Hawksbill</li>
+<li>Gazebo Garden</li>
+<li>Development tools (Git, build tools, etc.)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="alternative-configurations">Alternative Configurations<a href="#alternative-configurations" class="hash-link" aria-label="Direct link to Alternative Configurations" title="Direct link to Alternative Configurations">​</a></h3>
+<ul>
+<li>Virtual machines for students with incompatible hardware</li>
+<li>Cloud-based development environments</li>
+<li>Docker containers for consistent setup</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="accessibility-considerations">Accessibility Considerations<a href="#accessibility-considerations" class="hash-link" aria-label="Direct link to Accessibility Considerations" title="Direct link to Accessibility Considerations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="visual-accessibility">Visual Accessibility<a href="#visual-accessibility" class="hash-link" aria-label="Direct link to Visual Accessibility" title="Direct link to Visual Accessibility">​</a></h3>
+<ul>
+<li>High-contrast color schemes for simulation environments</li>
+<li>Text alternatives for all diagrams and visual content</li>
+<li>Screen reader compatibility for documentation</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="motor-accessibility">Motor Accessibility<a href="#motor-accessibility" class="hash-link" aria-label="Direct link to Motor Accessibility" title="Direct link to Motor Accessibility">​</a></h3>
+<ul>
+<li>Keyboard navigation options for simulation interfaces</li>
+<li>Alternative control methods for robot simulation</li>
+<li>Flexible timing for hands-on activities</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="safety-and-ethics">Safety and Ethics<a href="#safety-and-ethics" class="hash-link" aria-label="Direct link to Safety and Ethics" title="Direct link to Safety and Ethics">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="simulation-safety">Simulation Safety<a href="#simulation-safety" class="hash-link" aria-label="Direct link to Simulation Safety" title="Direct link to Simulation Safety">​</a></h3>
+<ul>
+<li>Discuss the importance of testing in simulation before real-world deployment</li>
+<li>Address limitations of simulation and the need for real-world validation</li>
+<li>Cover ethical considerations in autonomous robot development</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-privacy">Data Privacy<a href="#data-privacy" class="hash-link" aria-label="Direct link to Data Privacy" title="Direct link to Data Privacy">​</a></h3>
+<ul>
+<li>Ensure student data is protected during simulation exercises</li>
+<li>Discuss privacy implications of robot perception systems</li>
+<li>Address ethical use of simulation for testing</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="continuous-improvement">Continuous Improvement<a href="#continuous-improvement" class="hash-link" aria-label="Direct link to Continuous Improvement" title="Direct link to Continuous Improvement">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="feedback-collection">Feedback Collection<a href="#feedback-collection" class="hash-link" aria-label="Direct link to Feedback Collection" title="Direct link to Feedback Collection">​</a></h3>
+<ul>
+<li>Regular student feedback on content and exercises</li>
+<li>Peer review from other instructors</li>
+<li>Industry feedback on curriculum relevance</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="curriculum-updates">Curriculum Updates<a href="#curriculum-updates" class="hash-link" aria-label="Direct link to Curriculum Updates" title="Direct link to Curriculum Updates">​</a></h3>
+<ul>
+<li>Regular updates to reflect changes in ROS 2 and Gazebo</li>
+<li>Addition of new simulation tools and platforms</li>
+<li>Integration of emerging robotics technologies</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book/tree/main/docs/modules/instructor-notes/module-1-2-notes.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#module-1-ros-2-foundations---course-delivery-guide" class="table-of-contents__link toc-highlight">Module 1: ROS 2 Foundations - Course Delivery Guide</a><ul><li><a href="#learning-objectives-alignment" class="table-of-contents__link toc-highlight">Learning Objectives Alignment</a></li><li><a href="#teaching-strategies" class="table-of-contents__link toc-highlight">Teaching Strategies</a></li><li><a href="#common-student-challenges" class="table-of-contents__link toc-highlight">Common Student Challenges</a></li><li><a href="#laboratory-session-guidelines" class="table-of-contents__link toc-highlight">Laboratory Session Guidelines</a></li><li><a href="#module-1-assessment-rubric" class="table-of-contents__link toc-highlight">Module 1 Assessment Rubric</a></li></ul></li><li><a href="#module-2-gazebounity-simulation---course-delivery-guide" class="table-of-contents__link toc-highlight">Module 2: Gazebo/Unity Simulation - Course Delivery Guide</a><ul><li><a href="#learning-objectives-alignment-1" class="table-of-contents__link toc-highlight">Learning Objectives Alignment</a></li><li><a href="#teaching-strategies-1" class="table-of-contents__link toc-highlight">Teaching Strategies</a></li><li><a href="#common-student-challenges-1" class="table-of-contents__link toc-highlight">Common Student Challenges</a></li><li><a href="#laboratory-session-guidelines-1" class="table-of-contents__link toc-highlight">Laboratory Session Guidelines</a></li><li><a href="#module-2-assessment-rubric" class="table-of-contents__link toc-highlight">Module 2 Assessment Rubric</a></li></ul></li><li><a href="#cross-module-integration" class="table-of-contents__link toc-highlight">Cross-Module Integration</a><ul><li><a href="#connecting-module-1-and-2" class="table-of-contents__link toc-highlight">Connecting Module 1 and 2</a></li><li><a href="#capstone-preparation" class="table-of-contents__link toc-highlight">Capstone Preparation</a></li></ul></li><li><a href="#additional-resources" class="table-of-contents__link toc-highlight">Additional Resources</a><ul><li><a href="#for-instructors" class="table-of-contents__link toc-highlight">For Instructors</a></li><li><a href="#for-students" class="table-of-contents__link toc-highlight">For Students</a></li></ul></li><li><a href="#course-scheduling-recommendations" class="table-of-contents__link toc-highlight">Course Scheduling Recommendations</a><ul><li><a href="#standard-14-week-curriculum" class="table-of-contents__link toc-highlight">Standard 14-Week Curriculum</a></li><li><a href="#accelerated-7-week-curriculum" class="table-of-contents__link toc-highlight">Accelerated 7-Week Curriculum</a></li><li><a href="#flexible-scheduling-options" class="table-of-contents__link toc-highlight">Flexible Scheduling Options</a></li></ul></li><li><a href="#technology-requirements" class="table-of-contents__link toc-highlight">Technology Requirements</a><ul><li><a href="#minimum-hardware" class="table-of-contents__link toc-highlight">Minimum Hardware</a></li><li><a href="#software-dependencies" class="table-of-contents__link toc-highlight">Software Dependencies</a></li><li><a href="#alternative-configurations" class="table-of-contents__link toc-highlight">Alternative Configurations</a></li></ul></li><li><a href="#accessibility-considerations" class="table-of-contents__link toc-highlight">Accessibility Considerations</a><ul><li><a href="#visual-accessibility" class="table-of-contents__link toc-highlight">Visual Accessibility</a></li><li><a href="#motor-accessibility" class="table-of-contents__link toc-highlight">Motor Accessibility</a></li></ul></li><li><a href="#safety-and-ethics" class="table-of-contents__link toc-highlight">Safety and Ethics</a><ul><li><a href="#simulation-safety" class="table-of-contents__link toc-highlight">Simulation Safety</a></li><li><a href="#data-privacy" class="table-of-contents__link toc-highlight">Data Privacy</a></li></ul></li><li><a href="#continuous-improvement" class="table-of-contents__link toc-highlight">Continuous Improvement</a><ul><li><a href="#feedback-collection" class="table-of-contents__link toc-highlight">Feedback Collection</a></li><li><a href="#curriculum-updates" class="table-of-contents__link toc-highlight">Curriculum Updates</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Humanoid-AI-Book/docs/intro">Introduction</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

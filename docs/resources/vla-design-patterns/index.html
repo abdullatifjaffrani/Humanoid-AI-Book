@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-resources/vla-design-patterns" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">VLA System Design Patterns | Physical AI &amp; Humanoid Robotics Textbook</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/vla-design-patterns"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="VLA System Design Patterns | Physical AI &amp; Humanoid Robotics Textbook"><meta data-rh="true" name="description" content="This guide outlines proven design patterns for Vision-Language-Action (VLA) systems, focusing on integration of perception, language understanding, and robotic action in embodied AI applications."><meta data-rh="true" property="og:description" content="This guide outlines proven design patterns for Vision-Language-Action (VLA) systems, focusing on integration of perception, language understanding, and robotic action in embodied AI applications."><link data-rh="true" rel="icon" href="/Humanoid-AI-Book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/vla-design-patterns"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/vla-design-patterns" hreflang="en"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/vla-design-patterns" hreflang="x-default"><link rel="stylesheet" href="/Humanoid-AI-Book/assets/css/styles.f5ce8ed2.css">
+<script src="/Humanoid-AI-Book/assets/js/runtime~main.eda54158.js" defer="defer"></script>
+<script src="/Humanoid-AI-Book/assets/js/main.748b95ec.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Humanoid-AI-Book/"><div class="navbar__logo"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--light_rzkv"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--dark_mMAk"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/Humanoid-AI-Book/docs/intro">Textbook</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Vision-Language-Action System Design Patterns</h1>
+<p>This guide outlines proven design patterns for Vision-Language-Action (VLA) systems, focusing on integration of perception, language understanding, and robotic action in embodied AI applications.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="architectural-patterns">Architectural Patterns<a href="#architectural-patterns" class="hash-link" aria-label="Direct link to Architectural Patterns" title="Direct link to Architectural Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="modular-integration-pattern">Modular Integration Pattern<a href="#modular-integration-pattern" class="hash-link" aria-label="Direct link to Modular Integration Pattern" title="Direct link to Modular Integration Pattern">​</a></h3>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Vision System ←→ Language System ←→ Action System</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       ↓              ↓              ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   Perception ←→ Understanding ←→ Execution</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Structure systems with clear interfaces between vision, language, and action components while enabling tight integration where needed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hierarchical-control-pattern">Hierarchical Control Pattern<a href="#hierarchical-control-pattern" class="hash-link" aria-label="Direct link to Hierarchical Control Pattern" title="Direct link to Hierarchical Control Pattern">​</a></h3>
+<ul>
+<li>High-level: Language-based task planning and goal specification</li>
+<li>Mid-level: Task decomposition and skill selection</li>
+<li>Low-level: Execution of primitive actions with feedback control</li>
+</ul>
+<p>This pattern enables complex behaviors while maintaining system modularity.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="vision-language-integration-patterns">Vision-Language Integration Patterns<a href="#vision-language-integration-patterns" class="hash-link" aria-label="Direct link to Vision-Language Integration Patterns" title="Direct link to Vision-Language Integration Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="grounded-language-understanding">Grounded Language Understanding<a href="#grounded-language-understanding" class="hash-link" aria-label="Direct link to Grounded Language Understanding" title="Direct link to Grounded Language Understanding">​</a></h3>
+<ul>
+<li>Connect linguistic references to visual objects in the environment</li>
+<li>Use attention mechanisms to focus on relevant visual elements</li>
+<li>Implement spatial language understanding for navigation and manipulation</li>
+<li>Handle ambiguous references through clarification requests</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="multimodal-feature-fusion">Multimodal Feature Fusion<a href="#multimodal-feature-fusion" class="hash-link" aria-label="Direct link to Multimodal Feature Fusion" title="Direct link to Multimodal Feature Fusion">​</a></h3>
+<ul>
+<li>Early fusion: Combine raw sensory inputs before processing</li>
+<li>Late fusion: Combine high-level features from different modalities</li>
+<li>Cross-modal attention: Allow modalities to attend to each other</li>
+<li>Hierarchical fusion: Combine features at multiple levels of abstraction</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="action-planning-patterns">Action Planning Patterns<a href="#action-planning-patterns" class="hash-link" aria-label="Direct link to Action Planning Patterns" title="Direct link to Action Planning Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="language-guided-task-planning">Language-Guided Task Planning<a href="#language-guided-task-planning" class="hash-link" aria-label="Direct link to Language-Guided Task Planning" title="Direct link to Language-Guided Task Planning">​</a></h3>
+<ul>
+<li>Parse natural language commands into structured task representations</li>
+<li>Generate action sequences from high-level goals</li>
+<li>Handle task dependencies and constraints</li>
+<li>Implement fallback behaviors for failed actions</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reactive-action-selection">Reactive Action Selection<a href="#reactive-action-selection" class="hash-link" aria-label="Direct link to Reactive Action Selection" title="Direct link to Reactive Action Selection">​</a></h3>
+<ul>
+<li>Monitor environment state continuously</li>
+<li>Trigger actions based on state changes</li>
+<li>Implement interruptible action execution</li>
+<li>Handle concurrent action execution safely</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="system-integration-patterns">System Integration Patterns<a href="#system-integration-patterns" class="hash-link" aria-label="Direct link to System Integration Patterns" title="Direct link to System Integration Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="perception-action-loop">Perception-Action Loop<a href="#perception-action-loop" class="hash-link" aria-label="Direct link to Perception-Action Loop" title="Direct link to Perception-Action Loop">​</a></h3>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Perceive → Interpret → Plan → Act → (Repeat)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>A continuous loop that enables responsive and adaptive behavior in dynamic environments.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="memory-augmented-reasoning">Memory-Augmented Reasoning<a href="#memory-augmented-reasoning" class="hash-link" aria-label="Direct link to Memory-Augmented Reasoning" title="Direct link to Memory-Augmented Reasoning">​</a></h3>
+<ul>
+<li>Maintain episodic memory of past interactions</li>
+<li>Use semantic memory for world knowledge</li>
+<li>Implement working memory for current task context</li>
+<li>Enable learning from experience through memory consolidation</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="common-design-patterns">Common Design Patterns<a href="#common-design-patterns" class="hash-link" aria-label="Direct link to Common Design Patterns" title="Direct link to Common Design Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="object-centric-representation">Object-Centric Representation<a href="#object-centric-representation" class="hash-link" aria-label="Direct link to Object-Centric Representation" title="Direct link to Object-Centric Representation">​</a></h3>
+<ul>
+<li>Represent the world as a collection of objects with properties</li>
+<li>Enable language to reference objects in the visual scene</li>
+<li>Support manipulation planning based on object properties</li>
+<li>Facilitate object tracking across frames and interactions</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="skill-based-architecture">Skill-Based Architecture<a href="#skill-based-architecture" class="hash-link" aria-label="Direct link to Skill-Based Architecture" title="Direct link to Skill-Based Architecture">​</a></h3>
+<ul>
+<li>Decompose complex behaviors into reusable skills</li>
+<li>Parameterize skills for different objects and contexts</li>
+<li>Learn skills from demonstration or reinforcement</li>
+<li>Compose skills hierarchically for complex tasks</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="communication-patterns">Communication Patterns<a href="#communication-patterns" class="hash-link" aria-label="Direct link to Communication Patterns" title="Direct link to Communication Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ros-2-integration">ROS 2 Integration<a href="#ros-2-integration" class="hash-link" aria-label="Direct link to ROS 2 Integration" title="Direct link to ROS 2 Integration">​</a></h3>
+<ul>
+<li>Use standard message types for multimodal data</li>
+<li>Implement action servers for long-running VLA tasks</li>
+<li>Use services for synchronous language processing</li>
+<li>Implement topic-based communication for real-time perception</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="state-synchronization">State Synchronization<a href="#state-synchronization" class="hash-link" aria-label="Direct link to State Synchronization" title="Direct link to State Synchronization">​</a></h3>
+<ul>
+<li>Maintain consistent state across vision, language, and action systems</li>
+<li>Handle asynchronous processing in different components</li>
+<li>Implement state recovery mechanisms for system failures</li>
+<li>Ensure temporal consistency in multimodal processing</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="performance-optimization-patterns">Performance Optimization Patterns<a href="#performance-optimization-patterns" class="hash-link" aria-label="Direct link to Performance Optimization Patterns" title="Direct link to Performance Optimization Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="asynchronous-processing">Asynchronous Processing<a href="#asynchronous-processing" class="hash-link" aria-label="Direct link to Asynchronous Processing" title="Direct link to Asynchronous Processing">​</a></h3>
+<ul>
+<li>Process perception, language, and action in parallel when possible</li>
+<li>Use prediction and anticipation to reduce response times</li>
+<li>Implement speculative execution for likely future actions</li>
+<li>Buffer and batch process when appropriate</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="resource-management">Resource Management<a href="#resource-management" class="hash-link" aria-label="Direct link to Resource Management" title="Direct link to Resource Management">​</a></h3>
+<ul>
+<li>Prioritize computation based on task importance</li>
+<li>Use adaptive resolution for vision processing</li>
+<li>Implement early termination for time-critical tasks</li>
+<li>Balance accuracy and speed based on task requirements</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="safety-and-robustness-patterns">Safety and Robustness Patterns<a href="#safety-and-robustness-patterns" class="hash-link" aria-label="Direct link to Safety and Robustness Patterns" title="Direct link to Safety and Robustness Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="graceful-degradation">Graceful Degradation<a href="#graceful-degradation" class="hash-link" aria-label="Direct link to Graceful Degradation" title="Direct link to Graceful Degradation">​</a></h3>
+<ul>
+<li>Implement fallback behaviors when components fail</li>
+<li>Maintain safe states during system recovery</li>
+<li>Use redundant sensors and processing paths</li>
+<li>Handle ambiguous language through clarification</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="verification-and-validation">Verification and Validation<a href="#verification-and-validation" class="hash-link" aria-label="Direct link to Verification and Validation" title="Direct link to Verification and Validation">​</a></h3>
+<ul>
+<li>Validate action plans before execution</li>
+<li>Monitor system behavior for safety violations</li>
+<li>Implement safety interlocks and emergency stops</li>
+<li>Log all decisions for post-hoc analysis</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="learning-and-adaptation-patterns">Learning and Adaptation Patterns<a href="#learning-and-adaptation-patterns" class="hash-link" aria-label="Direct link to Learning and Adaptation Patterns" title="Direct link to Learning and Adaptation Patterns">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="imitation-learning-integration">Imitation Learning Integration<a href="#imitation-learning-integration" class="hash-link" aria-label="Direct link to Imitation Learning Integration" title="Direct link to Imitation Learning Integration">​</a></h3>
+<ul>
+<li>Learn skills from human demonstrations</li>
+<li>Transfer learned skills to new situations</li>
+<li>Adapt behaviors based on feedback</li>
+<li>Continuously improve performance over time</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reinforcement-learning-integration">Reinforcement Learning Integration<a href="#reinforcement-learning-integration" class="hash-link" aria-label="Direct link to Reinforcement Learning Integration" title="Direct link to Reinforcement Learning Integration">​</a></h3>
+<ul>
+<li>Define reward functions for complex VLA tasks</li>
+<li>Use language as a form of reward shaping</li>
+<li>Implement curriculum learning for complex tasks</li>
+<li>Balance exploration and exploitation in real environments</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-considerations">Implementation Considerations<a href="#implementation-considerations" class="hash-link" aria-label="Direct link to Implementation Considerations" title="Direct link to Implementation Considerations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="real-time-constraints">Real-time Constraints<a href="#real-time-constraints" class="hash-link" aria-label="Direct link to Real-time Constraints" title="Direct link to Real-time Constraints">​</a></h3>
+<ul>
+<li>Design systems to meet real-time performance requirements</li>
+<li>Implement priority-based scheduling for critical tasks</li>
+<li>Use efficient algorithms for time-critical operations</li>
+<li>Monitor and guarantee timing constraints</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scalability">Scalability<a href="#scalability" class="hash-link" aria-label="Direct link to Scalability" title="Direct link to Scalability">​</a></h3>
+<ul>
+<li>Design systems that can handle increasing complexity</li>
+<li>Implement distributed processing when needed</li>
+<li>Use efficient data structures and algorithms</li>
+<li>Consider computational requirements for target hardware</li>
+</ul>
+<p>This guide provides a foundation for designing robust and effective Vision-Language-Action systems. Patterns should be adapted based on specific application requirements and constraints.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book/tree/main/docs/resources/vla-design-patterns.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#architectural-patterns" class="table-of-contents__link toc-highlight">Architectural Patterns</a><ul><li><a href="#modular-integration-pattern" class="table-of-contents__link toc-highlight">Modular Integration Pattern</a></li><li><a href="#hierarchical-control-pattern" class="table-of-contents__link toc-highlight">Hierarchical Control Pattern</a></li></ul></li><li><a href="#vision-language-integration-patterns" class="table-of-contents__link toc-highlight">Vision-Language Integration Patterns</a><ul><li><a href="#grounded-language-understanding" class="table-of-contents__link toc-highlight">Grounded Language Understanding</a></li><li><a href="#multimodal-feature-fusion" class="table-of-contents__link toc-highlight">Multimodal Feature Fusion</a></li></ul></li><li><a href="#action-planning-patterns" class="table-of-contents__link toc-highlight">Action Planning Patterns</a><ul><li><a href="#language-guided-task-planning" class="table-of-contents__link toc-highlight">Language-Guided Task Planning</a></li><li><a href="#reactive-action-selection" class="table-of-contents__link toc-highlight">Reactive Action Selection</a></li></ul></li><li><a href="#system-integration-patterns" class="table-of-contents__link toc-highlight">System Integration Patterns</a><ul><li><a href="#perception-action-loop" class="table-of-contents__link toc-highlight">Perception-Action Loop</a></li><li><a href="#memory-augmented-reasoning" class="table-of-contents__link toc-highlight">Memory-Augmented Reasoning</a></li></ul></li><li><a href="#common-design-patterns" class="table-of-contents__link toc-highlight">Common Design Patterns</a><ul><li><a href="#object-centric-representation" class="table-of-contents__link toc-highlight">Object-Centric Representation</a></li><li><a href="#skill-based-architecture" class="table-of-contents__link toc-highlight">Skill-Based Architecture</a></li></ul></li><li><a href="#communication-patterns" class="table-of-contents__link toc-highlight">Communication Patterns</a><ul><li><a href="#ros-2-integration" class="table-of-contents__link toc-highlight">ROS 2 Integration</a></li><li><a href="#state-synchronization" class="table-of-contents__link toc-highlight">State Synchronization</a></li></ul></li><li><a href="#performance-optimization-patterns" class="table-of-contents__link toc-highlight">Performance Optimization Patterns</a><ul><li><a href="#asynchronous-processing" class="table-of-contents__link toc-highlight">Asynchronous Processing</a></li><li><a href="#resource-management" class="table-of-contents__link toc-highlight">Resource Management</a></li></ul></li><li><a href="#safety-and-robustness-patterns" class="table-of-contents__link toc-highlight">Safety and Robustness Patterns</a><ul><li><a href="#graceful-degradation" class="table-of-contents__link toc-highlight">Graceful Degradation</a></li><li><a href="#verification-and-validation" class="table-of-contents__link toc-highlight">Verification and Validation</a></li></ul></li><li><a href="#learning-and-adaptation-patterns" class="table-of-contents__link toc-highlight">Learning and Adaptation Patterns</a><ul><li><a href="#imitation-learning-integration" class="table-of-contents__link toc-highlight">Imitation Learning Integration</a></li><li><a href="#reinforcement-learning-integration" class="table-of-contents__link toc-highlight">Reinforcement Learning Integration</a></li></ul></li><li><a href="#implementation-considerations" class="table-of-contents__link toc-highlight">Implementation Considerations</a><ul><li><a href="#real-time-constraints" class="table-of-contents__link toc-highlight">Real-time Constraints</a></li><li><a href="#scalability" class="table-of-contents__link toc-highlight">Scalability</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Humanoid-AI-Book/docs/intro">Introduction</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

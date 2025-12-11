@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-modules/capstone/capstone-evaluation" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">Capstone Evaluation Criteria | Physical AI &amp; Humanoid Robotics Textbook</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/capstone/capstone-evaluation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Capstone Evaluation Criteria | Physical AI &amp; Humanoid Robotics Textbook"><meta data-rh="true" name="description" content="Comprehensive evaluation criteria for assessing the autonomous humanoid robot capstone project"><meta data-rh="true" property="og:description" content="Comprehensive evaluation criteria for assessing the autonomous humanoid robot capstone project"><link data-rh="true" rel="icon" href="/Humanoid-AI-Book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/capstone/capstone-evaluation"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/capstone/capstone-evaluation" hreflang="en"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/modules/capstone/capstone-evaluation" hreflang="x-default"><link rel="stylesheet" href="/Humanoid-AI-Book/assets/css/styles.f5ce8ed2.css">
+<script src="/Humanoid-AI-Book/assets/js/runtime~main.eda54158.js" defer="defer"></script>
+<script src="/Humanoid-AI-Book/assets/js/main.748b95ec.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Humanoid-AI-Book/"><div class="navbar__logo"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--light_rzkv"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--dark_mMAk"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/Humanoid-AI-Book/docs/intro">Textbook</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Humanoid-AI-Book/docs/intro">Introduction</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Humanoid-AI-Book/docs/quickstart">Quick Start Guide</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/Humanoid-AI-Book/docs/modules/module-1-ros-foundations">Module 1: ROS 2 Foundations</a><button aria-label="Expand sidebar category &#x27;Module 1: ROS 2 Foundations&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/Humanoid-AI-Book/docs/modules/module-2-gazebo-unity">Module 2: Gazebo/Unity Simulation</a><button aria-label="Expand sidebar category &#x27;Module 2: Gazebo/Unity Simulation&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/Humanoid-AI-Book/docs/modules/module-3-nvidia-isaac">Module 3: NVIDIA Isaac Platform</a><button aria-label="Expand sidebar category &#x27;Module 3: NVIDIA Isaac Platform&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/Humanoid-AI-Book/docs/modules/module-4-vla-systems">Module 4: Vision-Language-Action Systems</a><button aria-label="Expand sidebar category &#x27;Module 4: Vision-Language-Action Systems&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" aria-expanded="true" href="/Humanoid-AI-Book/docs/modules/capstone">Capstone Project</a><button aria-label="Collapse sidebar category &#x27;Capstone Project&#x27;" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/Humanoid-AI-Book/docs/modules/capstone/capstone-project-overview">Capstone Project Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/Humanoid-AI-Book/docs/modules/capstone/capstone-implementation">Capstone Implementation Guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/Humanoid-AI-Book/docs/modules/capstone/capstone-evaluation">Capstone Evaluation Criteria</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/Humanoid-AI-Book/docs/references/ros-bibliography">References &amp; Resources</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/Humanoid-AI-Book/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/Humanoid-AI-Book/docs/modules/capstone"><span itemprop="name">Capstone Project</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Capstone Evaluation Criteria</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Capstone Evaluation Criteria</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>This document outlines the comprehensive evaluation framework for the Autonomous Humanoid Robot capstone project. The evaluation process assesses both technical implementation and project outcomes across multiple dimensions. Students should refer to this document throughout the project development process to ensure their implementation aligns with the evaluation criteria.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="evaluation-framework">Evaluation Framework<a href="#evaluation-framework" class="hash-link" aria-label="Direct link to Evaluation Framework" title="Direct link to Evaluation Framework">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="assessment-structure">Assessment Structure<a href="#assessment-structure" class="hash-link" aria-label="Direct link to Assessment Structure" title="Direct link to Assessment Structure">​</a></h3>
+<p>The capstone project will be evaluated across four major categories:</p>
+<ol>
+<li><strong>Technical Implementation</strong> (40%)</li>
+<li><strong>System Functionality</strong> (30%)</li>
+<li><strong>Documentation and Presentation</strong> (20%)</li>
+<li><strong>Innovation and Problem-Solving</strong> (10%)</li>
+</ol>
+<p>Each category contains specific criteria with detailed performance indicators for different achievement levels.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-technical-implementation-40">1. Technical Implementation (40%)<a href="#1-technical-implementation-40" class="hash-link" aria-label="Direct link to 1. Technical Implementation (40%)" title="Direct link to 1. Technical Implementation (40%)">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="11-system-architecture-15">1.1 System Architecture (15%)<a href="#11-system-architecture-15" class="hash-link" aria-label="Direct link to 1.1 System Architecture (15%)" title="Direct link to 1.1 System Architecture (15%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100">Excellent (A, 90-100%)<a href="#excellent-a-90-100" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Well-designed, modular architecture with clear component separation</li>
+<li>Proper use of ROS 2 design patterns and best practices</li>
+<li>Efficient communication patterns between components</li>
+<li>Scalable and maintainable code structure</li>
+<li>Comprehensive error handling and recovery mechanisms</li>
+<li>Proper use of Quality of Service (QoS) settings</li>
+<li>Effective use of NVIDIA Isaac GPU acceleration</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89">Proficient (B, 80-89%)<a href="#proficient-b-80-89" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Good system architecture with appropriate component separation</li>
+<li>Proper use of ROS 2 concepts and patterns</li>
+<li>Adequate communication between components</li>
+<li>Reasonable code organization and structure</li>
+<li>Basic error handling implemented</li>
+<li>Some use of GPU acceleration where appropriate</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Basic system architecture with functional component separation</li>
+<li>Acceptable use of ROS 2 concepts</li>
+<li>Functional communication between components</li>
+<li>Basic code organization</li>
+<li>Limited error handling</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Poor system architecture with unclear component relationships</li>
+<li>Inconsistent use of ROS 2 concepts</li>
+<li>Inadequate communication patterns</li>
+<li>Poor code organization</li>
+<li>Minimal or no error handling</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="12-code-quality-15">1.2 Code Quality (15%)<a href="#12-code-quality-15" class="hash-link" aria-label="Direct link to 1.2 Code Quality (15%)" title="Direct link to 1.2 Code Quality (15%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-1">Excellent (A, 90-100%)<a href="#excellent-a-90-100-1" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Clean, well-documented code with meaningful variable names</li>
+<li>Consistent coding style following ROS 2 guidelines</li>
+<li>Comprehensive comments and documentation</li>
+<li>Proper use of design patterns</li>
+<li>Extensive unit and integration tests</li>
+<li>Adherence to security best practices</li>
+<li>Efficient memory and resource management</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-1">Proficient (B, 80-89%)<a href="#proficient-b-80-89-1" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Good code quality with adequate documentation</li>
+<li>Consistent coding style</li>
+<li>Appropriate comments and documentation</li>
+<li>Good use of design patterns</li>
+<li>Adequate testing coverage</li>
+<li>Good resource management</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-1">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-1" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Acceptable code quality with basic documentation</li>
+<li>Generally consistent coding style</li>
+<li>Basic comments and documentation</li>
+<li>Some use of design patterns</li>
+<li>Basic testing coverage</li>
+<li>Adequate resource management</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-1">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-1" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Poor code quality with minimal documentation</li>
+<li>Inconsistent coding style</li>
+<li>Insufficient comments</li>
+<li>Poor use of design patterns</li>
+<li>Limited testing</li>
+<li>Poor resource management</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="13-integration-quality-10">1.3 Integration Quality (10%)<a href="#13-integration-quality-10" class="hash-link" aria-label="Direct link to 1.3 Integration Quality (10%)" title="Direct link to 1.3 Integration Quality (10%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-2">Excellent (A, 90-100%)<a href="#excellent-a-90-100-2" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Seamless integration of all system components</li>
+<li>Robust inter-component communication</li>
+<li>Effective error propagation and handling</li>
+<li>Proper data synchronization between components</li>
+<li>Comprehensive integration testing</li>
+<li>Well-defined interfaces between components</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-2">Proficient (B, 80-89%)<a href="#proficient-b-80-89-2" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Good integration of system components</li>
+<li>Adequate inter-component communication</li>
+<li>Good error handling</li>
+<li>Proper data synchronization</li>
+<li>Good integration testing</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-2">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-2" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Basic integration of system components</li>
+<li>Functional inter-component communication</li>
+<li>Basic error handling</li>
+<li>Adequate data synchronization</li>
+<li>Basic integration testing</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-2">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-2" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Poor integration of system components</li>
+<li>Inadequate inter-component communication</li>
+<li>Poor error handling</li>
+<li>Poor data synchronization</li>
+<li>Limited integration testing</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-system-functionality-30">2. System Functionality (30%)<a href="#2-system-functionality-30" class="hash-link" aria-label="Direct link to 2. System Functionality (30%)" title="Direct link to 2. System Functionality (30%)">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="21-navigation-performance-10">2.1 Navigation Performance (10%)<a href="#21-navigation-performance-10" class="hash-link" aria-label="Direct link to 2.1 Navigation Performance (10%)" title="Direct link to 2.1 Navigation Performance (10%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-3">Excellent (A, 90-100%)<a href="#excellent-a-90-100-3" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Navigation success rate &gt;95% in complex environments</li>
+<li>Smooth, efficient path planning and execution</li>
+<li>Effective obstacle avoidance and recovery</li>
+<li>Accurate localization and mapping</li>
+<li>Fast response times (<code>&lt;1</code> second for path planning)</li>
+<li>Safe operation in dynamic environments</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-3">Proficient (B, 80-89%)<a href="#proficient-b-80-89-3" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Navigation success rate 85-94% in complex environments</li>
+<li>Good path planning and execution</li>
+<li>Good obstacle avoidance</li>
+<li>Accurate localization</li>
+<li>Reasonable response times</li>
+<li>Safe operation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-3">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-3" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Navigation success rate 75-84% in complex environments</li>
+<li>Basic path planning and execution</li>
+<li>Basic obstacle avoidance</li>
+<li>Adequate localization</li>
+<li>Acceptable response times</li>
+<li>Generally safe operation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-3">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-3" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Navigation success rate <code>&lt;75%</code> in complex environments</li>
+<li>Poor path planning and execution</li>
+<li>Poor obstacle avoidance</li>
+<li>Inaccurate localization</li>
+<li>Slow response times</li>
+<li>Safety concerns</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="22-vision-processing-performance-10">2.2 Vision Processing Performance (10%)<a href="#22-vision-processing-performance-10" class="hash-link" aria-label="Direct link to 2.2 Vision Processing Performance (10%)" title="Direct link to 2.2 Vision Processing Performance (10%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-4">Excellent (A, 90-100%)<a href="#excellent-a-90-100-4" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Object detection accuracy &gt;95%</li>
+<li>Real-time processing (&gt;30 FPS)</li>
+<li>Robust performance in varying conditions</li>
+<li>Accurate 3D scene understanding</li>
+<li>Effective multi-modal sensor fusion</li>
+<li>Low false positive/negative rates</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-4">Proficient (B, 80-89%)<a href="#proficient-b-80-89-4" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Object detection accuracy 85-94%</li>
+<li>Near real-time processing (15-30 FPS)</li>
+<li>Good performance in most conditions</li>
+<li>Good 3D scene understanding</li>
+<li>Good sensor fusion</li>
+<li>Low to moderate false rates</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-4">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-4" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Object detection accuracy 75-84%</li>
+<li>Adequate processing speed (10-15 FPS)</li>
+<li>Basic performance in good conditions</li>
+<li>Basic 3D understanding</li>
+<li>Basic sensor fusion</li>
+<li>Moderate false rates</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-4">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-4" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Object detection accuracy <code>&lt;75%</code></li>
+<li>Slow processing (<code>&lt;10</code> FPS)</li>
+<li>Poor performance in varying conditions</li>
+<li>Poor 3D understanding</li>
+<li>Poor sensor fusion</li>
+<li>High false rates</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="23-language-understanding-performance-10">2.3 Language Understanding Performance (10%)<a href="#23-language-understanding-performance-10" class="hash-link" aria-label="Direct link to 2.3 Language Understanding Performance (10%)" title="Direct link to 2.3 Language Understanding Performance (10%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-5">Excellent (A, 90-100%)<a href="#excellent-a-90-100-5" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Command interpretation accuracy &gt;95%</li>
+<li>Natural language understanding in complex scenarios</li>
+<li>Effective handling of ambiguous commands</li>
+<li>Context-aware responses</li>
+<li>Fast response times (<code>&lt;1</code> second)</li>
+<li>Robust to noise and variations</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-5">Proficient (B, 80-89%)<a href="#proficient-b-80-89-5" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Command interpretation accuracy 85-94%</li>
+<li>Good understanding of natural language</li>
+<li>Good handling of ambiguous commands</li>
+<li>Reasonable context awareness</li>
+<li>Good response times</li>
+<li>Robust to moderate noise</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-5">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-5" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Command interpretation accuracy 75-84%</li>
+<li>Basic understanding of natural language</li>
+<li>Basic handling of ambiguous commands</li>
+<li>Basic context awareness</li>
+<li>Acceptable response times</li>
+<li>Limited robustness</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-5">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-5" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Command interpretation accuracy <code>&lt;75%</code></li>
+<li>Poor understanding of natural language</li>
+<li>Poor handling of ambiguous commands</li>
+<li>Little to no context awareness</li>
+<li>Slow response times</li>
+<li>Poor robustness</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-documentation-and-presentation-20">3. Documentation and Presentation (20%)<a href="#3-documentation-and-presentation-20" class="hash-link" aria-label="Direct link to 3. Documentation and Presentation (20%)" title="Direct link to 3. Documentation and Presentation (20%)">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="31-technical-documentation-10">3.1 Technical Documentation (10%)<a href="#31-technical-documentation-10" class="hash-link" aria-label="Direct link to 3.1 Technical Documentation (10%)" title="Direct link to 3.1 Technical Documentation (10%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-6">Excellent (A, 90-100%)<a href="#excellent-a-90-100-6" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Comprehensive system architecture documentation</li>
+<li>Detailed component specifications</li>
+<li>Complete API documentation</li>
+<li>Thorough installation and setup guides</li>
+<li>Comprehensive troubleshooting guides</li>
+<li>Well-organized and professional presentation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-6">Proficient (B, 80-89%)<a href="#proficient-b-80-89-6" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Good system architecture documentation</li>
+<li>Good component specifications</li>
+<li>Good API documentation</li>
+<li>Good installation and setup guides</li>
+<li>Good troubleshooting guides</li>
+<li>Well-organized presentation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-6">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-6" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Basic system architecture documentation</li>
+<li>Basic component specifications</li>
+<li>Basic API documentation</li>
+<li>Basic installation and setup guides</li>
+<li>Basic troubleshooting guides</li>
+<li>Adequately organized presentation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-6">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-6" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Incomplete system architecture documentation</li>
+<li>Incomplete component specifications</li>
+<li>Incomplete API documentation</li>
+<li>Incomplete installation and setup guides</li>
+<li>Incomplete troubleshooting guides</li>
+<li>Poorly organized presentation</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="32-final-presentation-10">3.2 Final Presentation (10%)<a href="#32-final-presentation-10" class="hash-link" aria-label="Direct link to 3.2 Final Presentation (10%)" title="Direct link to 3.2 Final Presentation (10%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-7">Excellent (A, 90-100%)<a href="#excellent-a-90-100-7" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Clear, engaging presentation of system capabilities</li>
+<li>Comprehensive demonstration of all features</li>
+<li>Thorough explanation of technical approach</li>
+<li>Effective handling of questions</li>
+<li>Professional presentation quality</li>
+<li>Compelling demonstration of innovation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-7">Proficient (B, 80-89%)<a href="#proficient-b-80-89-7" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Good presentation of system capabilities</li>
+<li>Good demonstration of features</li>
+<li>Good explanation of technical approach</li>
+<li>Good handling of questions</li>
+<li>Good presentation quality</li>
+<li>Good demonstration of innovation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-7">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-7" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Basic presentation of system capabilities</li>
+<li>Basic demonstration of features</li>
+<li>Basic explanation of technical approach</li>
+<li>Adequate handling of questions</li>
+<li>Adequate presentation quality</li>
+<li>Basic demonstration of innovation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-7">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-7" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Poor presentation of system capabilities</li>
+<li>Poor demonstration of features</li>
+<li>Poor explanation of technical approach</li>
+<li>Poor handling of questions</li>
+<li>Poor presentation quality</li>
+<li>Limited demonstration of innovation</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-innovation-and-problem-solving-10">4. Innovation and Problem-Solving (10%)<a href="#4-innovation-and-problem-solving-10" class="hash-link" aria-label="Direct link to 4. Innovation and Problem-Solving (10%)" title="Direct link to 4. Innovation and Problem-Solving (10%)">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="41-technical-innovation-5">4.1 Technical Innovation (5%)<a href="#41-technical-innovation-5" class="hash-link" aria-label="Direct link to 4.1 Technical Innovation (5%)" title="Direct link to 4.1 Technical Innovation (5%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-8">Excellent (A, 90-100%)<a href="#excellent-a-90-100-8" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Novel approaches to technical challenges</li>
+<li>Creative solutions to complex problems</li>
+<li>Significant improvements to existing methods</li>
+<li>Innovative integration of technologies</li>
+<li>Evidence of original thinking</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-8">Proficient (B, 80-89%)<a href="#proficient-b-80-89-8" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Good approaches to technical challenges</li>
+<li>Creative solutions to problems</li>
+<li>Some improvements to existing methods</li>
+<li>Good integration of technologies</li>
+<li>Evidence of creative thinking</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-8">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-8" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Adequate approaches to technical challenges</li>
+<li>Basic solutions to problems</li>
+<li>Some use of existing methods</li>
+<li>Adequate integration of technologies</li>
+<li>Some evidence of creative thinking</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-8">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-8" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Poor approaches to technical challenges</li>
+<li>Inadequate solutions to problems</li>
+<li>Little improvement to existing methods</li>
+<li>Poor integration of technologies</li>
+<li>Limited creative thinking</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="42-problem-solving-approach-5">4.2 Problem-Solving Approach (5%)<a href="#42-problem-solving-approach-5" class="hash-link" aria-label="Direct link to 4.2 Problem-Solving Approach (5%)" title="Direct link to 4.2 Problem-Solving Approach (5%)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="excellent-a-90-100-9">Excellent (A, 90-100%)<a href="#excellent-a-90-100-9" class="hash-link" aria-label="Direct link to Excellent (A, 90-100%)" title="Direct link to Excellent (A, 90-100%)">​</a></h4>
+<ul>
+<li>Systematic approach to problem identification</li>
+<li>Effective debugging and troubleshooting</li>
+<li>Creative solutions to unexpected challenges</li>
+<li>Learning from failures and iterating</li>
+<li>Comprehensive testing and validation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="proficient-b-80-89-9">Proficient (B, 80-89%)<a href="#proficient-b-80-89-9" class="hash-link" aria-label="Direct link to Proficient (B, 80-89%)" title="Direct link to Proficient (B, 80-89%)">​</a></h4>
+<ul>
+<li>Good approach to problem identification</li>
+<li>Good debugging and troubleshooting</li>
+<li>Good solutions to challenges</li>
+<li>Learning from some failures</li>
+<li>Good testing and validation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="satisfactory-c-70-79-9">Satisfactory (C, 70-79%)<a href="#satisfactory-c-70-79-9" class="hash-link" aria-label="Direct link to Satisfactory (C, 70-79%)" title="Direct link to Satisfactory (C, 70-79%)">​</a></h4>
+<ul>
+<li>Basic approach to problem identification</li>
+<li>Basic debugging and troubleshooting</li>
+<li>Basic solutions to challenges</li>
+<li>Some learning from failures</li>
+<li>Basic testing and validation</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="needs-improvement-d-60-69-9">Needs Improvement (D, 60-69%)<a href="#needs-improvement-d-60-69-9" class="hash-link" aria-label="Direct link to Needs Improvement (D, 60-69%)" title="Direct link to Needs Improvement (D, 60-69%)">​</a></h4>
+<ul>
+<li>Poor approach to problem identification</li>
+<li>Poor debugging and troubleshooting</li>
+<li>Poor solutions to challenges</li>
+<li>Little learning from failures</li>
+<li>Limited testing and validation</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="evaluation-process">Evaluation Process<a href="#evaluation-process" class="hash-link" aria-label="Direct link to Evaluation Process" title="Direct link to Evaluation Process">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-self-assessment">1. Self-Assessment<a href="#1-self-assessment" class="hash-link" aria-label="Direct link to 1. Self-Assessment" title="Direct link to 1. Self-Assessment">​</a></h3>
+<p>Students should complete a self-assessment using this rubric before the final evaluation.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-peer-review">2. Peer Review<a href="#2-peer-review" class="hash-link" aria-label="Direct link to 2. Peer Review" title="Direct link to 2. Peer Review">​</a></h3>
+<p>Students will evaluate a subset of other projects using this rubric.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-instructor-evaluation">3. Instructor Evaluation<a href="#3-instructor-evaluation" class="hash-link" aria-label="Direct link to 3. Instructor Evaluation" title="Direct link to 3. Instructor Evaluation">​</a></h3>
+<p>The instructor will evaluate each project using this rubric.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-final-demonstration">4. Final Demonstration<a href="#4-final-demonstration" class="hash-link" aria-label="Direct link to 4. Final Demonstration" title="Direct link to 4. Final Demonstration">​</a></h3>
+<p>Projects will be evaluated during a live demonstration session.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="submission-requirements">Submission Requirements<a href="#submission-requirements" class="hash-link" aria-label="Direct link to Submission Requirements" title="Direct link to Submission Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="required-deliverables">Required Deliverables<a href="#required-deliverables" class="hash-link" aria-label="Direct link to Required Deliverables" title="Direct link to Required Deliverables">​</a></h3>
+<ol>
+<li>Complete source code with documentation</li>
+<li>System architecture documentation</li>
+<li>Installation and setup guide</li>
+<li>User manual</li>
+<li>Technical report (10-15 pages)</li>
+<li>Video demonstration (5-10 minutes)</li>
+<li>Final presentation slides</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="submission-format">Submission Format<a href="#submission-format" class="hash-link" aria-label="Direct link to Submission Format" title="Direct link to Submission Format">​</a></h3>
+<ul>
+<li>All deliverables should be submitted in a structured archive</li>
+<li>Source code should be in a Git repository</li>
+<li>Documentation should be in PDF format</li>
+<li>Video should be in MP4 format</li>
+<li>Presentation should be in PDF format</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="grading-scale">Grading Scale<a href="#grading-scale" class="hash-link" aria-label="Direct link to Grading Scale" title="Direct link to Grading Scale">​</a></h2>
+<ul>
+<li>A (90-100%): Excellent - Exceeds expectations</li>
+<li>B (80-89%): Good - Meets expectations with some excellence</li>
+<li>C (70-79%): Satisfactory - Meets minimum expectations</li>
+<li>D (60-69%): Below expectations - Needs significant improvement</li>
+<li>F (0-59%): Unsatisfactory - Does not meet expectations</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="appeals-process">Appeals Process<a href="#appeals-process" class="hash-link" aria-label="Direct link to Appeals Process" title="Direct link to Appeals Process">​</a></h2>
+<p>If students believe there was an error in the evaluation, they may submit a written appeal within one week of grade posting. Appeals should include specific evidence supporting the request for grade change.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additional-resources">Additional Resources<a href="#additional-resources" class="hash-link" aria-label="Direct link to Additional Resources" title="Direct link to Additional Resources">​</a></h2>
+<ul>
+<li><a href="/Humanoid-AI-Book/docs/resources/technical-documentation-guidelines">Technical Documentation Guidelines</a></li>
+<li><a href="/Humanoid-AI-Book/docs/resources/ros2-best-practices">ROS 2 Best Practices</a></li>
+<li><a href="/Humanoid-AI-Book/docs/resources/presentation-tips">Project Presentation Tips</a></li>
+<li><a href="/Humanoid-AI-Book/docs/resources/code-review-checklist">Code Review Checklist</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cross-references">Cross-References<a href="#cross-references" class="hash-link" aria-label="Direct link to Cross-References" title="Direct link to Cross-References">​</a></h2>
+<p>This evaluation framework connects with all modules in the curriculum:</p>
+<ul>
+<li><a href="/Humanoid-AI-Book/docs/modules/module-1-ros-foundations/">Module 1: ROS 2 Foundations</a> - for technical implementation assessment</li>
+<li><a href="/Humanoid-AI-Book/docs/modules/module-2-gazebo-unity/">Module 2: Simulation</a> - for system testing and validation</li>
+<li><a href="/Humanoid-AI-Book/docs/modules/module-3-nvidia-isaac/">Module 3: Isaac Platform</a> - for performance evaluation</li>
+<li><a href="/Humanoid-AI-Book/docs/modules/module-4-vla-systems/">Module 4: VLA Systems</a> - for functionality assessment</li>
+<li><a href="/Humanoid-AI-Book/docs/modules/module-4-vla-systems/week-14-system-integration">Week 14: System Integration</a> - for integration quality assessment</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book/tree/main/docs/modules/capstone/capstone-evaluation.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/Humanoid-AI-Book/docs/modules/capstone/capstone-implementation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Capstone Implementation Guide</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/Humanoid-AI-Book/docs/references/ros-bibliography"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">References and Bibliography</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#evaluation-framework" class="table-of-contents__link toc-highlight">Evaluation Framework</a><ul><li><a href="#assessment-structure" class="table-of-contents__link toc-highlight">Assessment Structure</a></li></ul></li><li><a href="#1-technical-implementation-40" class="table-of-contents__link toc-highlight">1. Technical Implementation (40%)</a><ul><li><a href="#11-system-architecture-15" class="table-of-contents__link toc-highlight">1.1 System Architecture (15%)</a></li><li><a href="#12-code-quality-15" class="table-of-contents__link toc-highlight">1.2 Code Quality (15%)</a></li><li><a href="#13-integration-quality-10" class="table-of-contents__link toc-highlight">1.3 Integration Quality (10%)</a></li></ul></li><li><a href="#2-system-functionality-30" class="table-of-contents__link toc-highlight">2. System Functionality (30%)</a><ul><li><a href="#21-navigation-performance-10" class="table-of-contents__link toc-highlight">2.1 Navigation Performance (10%)</a></li><li><a href="#22-vision-processing-performance-10" class="table-of-contents__link toc-highlight">2.2 Vision Processing Performance (10%)</a></li><li><a href="#23-language-understanding-performance-10" class="table-of-contents__link toc-highlight">2.3 Language Understanding Performance (10%)</a></li></ul></li><li><a href="#3-documentation-and-presentation-20" class="table-of-contents__link toc-highlight">3. Documentation and Presentation (20%)</a><ul><li><a href="#31-technical-documentation-10" class="table-of-contents__link toc-highlight">3.1 Technical Documentation (10%)</a></li><li><a href="#32-final-presentation-10" class="table-of-contents__link toc-highlight">3.2 Final Presentation (10%)</a></li></ul></li><li><a href="#4-innovation-and-problem-solving-10" class="table-of-contents__link toc-highlight">4. Innovation and Problem-Solving (10%)</a><ul><li><a href="#41-technical-innovation-5" class="table-of-contents__link toc-highlight">4.1 Technical Innovation (5%)</a></li><li><a href="#42-problem-solving-approach-5" class="table-of-contents__link toc-highlight">4.2 Problem-Solving Approach (5%)</a></li></ul></li><li><a href="#evaluation-process" class="table-of-contents__link toc-highlight">Evaluation Process</a><ul><li><a href="#1-self-assessment" class="table-of-contents__link toc-highlight">1. Self-Assessment</a></li><li><a href="#2-peer-review" class="table-of-contents__link toc-highlight">2. Peer Review</a></li><li><a href="#3-instructor-evaluation" class="table-of-contents__link toc-highlight">3. Instructor Evaluation</a></li><li><a href="#4-final-demonstration" class="table-of-contents__link toc-highlight">4. Final Demonstration</a></li></ul></li><li><a href="#submission-requirements" class="table-of-contents__link toc-highlight">Submission Requirements</a><ul><li><a href="#required-deliverables" class="table-of-contents__link toc-highlight">Required Deliverables</a></li><li><a href="#submission-format" class="table-of-contents__link toc-highlight">Submission Format</a></li></ul></li><li><a href="#grading-scale" class="table-of-contents__link toc-highlight">Grading Scale</a></li><li><a href="#appeals-process" class="table-of-contents__link toc-highlight">Appeals Process</a></li><li><a href="#additional-resources" class="table-of-contents__link toc-highlight">Additional Resources</a></li><li><a href="#cross-references" class="table-of-contents__link toc-highlight">Cross-References</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Humanoid-AI-Book/docs/intro">Introduction</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

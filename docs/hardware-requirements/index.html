@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-hardware-requirements" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">Hardware Requirements | Physical AI &amp; Humanoid Robotics Textbook</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/hardware-requirements"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Hardware Requirements | Physical AI &amp; Humanoid Robotics Textbook"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/Humanoid-AI-Book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/hardware-requirements"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/hardware-requirements" hreflang="en"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/hardware-requirements" hreflang="x-default"><link rel="stylesheet" href="/Humanoid-AI-Book/assets/css/styles.f5ce8ed2.css">
+<script src="/Humanoid-AI-Book/assets/js/runtime~main.eda54158.js" defer="defer"></script>
+<script src="/Humanoid-AI-Book/assets/js/main.748b95ec.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Humanoid-AI-Book/"><div class="navbar__logo"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--light_rzkv"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--dark_mMAk"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/Humanoid-AI-Book/docs/intro">Textbook</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Hardware Requirements</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>This document outlines the hardware requirements for implementing the Physical AI &amp; Humanoid Robotics systems described in this textbook. Requirements are categorized by system type and use case, with minimum and recommended specifications for different deployment scenarios.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="general-system-requirements">General System Requirements<a href="#general-system-requirements" class="hash-link" aria-label="Direct link to General System Requirements" title="Direct link to General System Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="operating-system">Operating System<a href="#operating-system" class="hash-link" aria-label="Direct link to Operating System" title="Direct link to Operating System">​</a></h3>
+<ul>
+<li><strong>Ubuntu 22.04 LTS</strong> (Recommended for development and deployment)</li>
+<li><strong>Alternative</strong>: Ubuntu 20.04 LTS (Supported but not recommended)</li>
+<li><strong>Windows</strong>: Windows 10/11 with WSL2 (Development only, not recommended for deployment)</li>
+<li><strong>Real-time kernel</strong>: Recommended for time-critical applications</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="basic-development-workstation">Basic Development Workstation<a href="#basic-development-workstation" class="hash-link" aria-label="Direct link to Basic Development Workstation" title="Direct link to Basic Development Workstation">​</a></h3>
+<ul>
+<li><strong>CPU</strong>: Intel i7 or AMD Ryzen 7 with 8+ cores</li>
+<li><strong>RAM</strong>: 16GB minimum, 32GB recommended</li>
+<li><strong>Storage</strong>: 500GB SSD minimum, 1TB recommended</li>
+<li><strong>Network</strong>: Gigabit Ethernet, WiFi 802.11ac or better</li>
+<li><strong>Graphics</strong>: Integrated graphics sufficient for basic development</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ros-2-development-requirements">ROS 2 Development Requirements<a href="#ros-2-development-requirements" class="hash-link" aria-label="Direct link to ROS 2 Development Requirements" title="Direct link to ROS 2 Development Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minimum-specifications">Minimum Specifications<a href="#minimum-specifications" class="hash-link" aria-label="Direct link to Minimum Specifications" title="Direct link to Minimum Specifications">​</a></h3>
+<ul>
+<li><strong>CPU</strong>: Quad-core processor (Intel i5 or equivalent)</li>
+<li><strong>RAM</strong>: 8GB minimum</li>
+<li><strong>Storage</strong>: 200GB available space</li>
+<li><strong>OS</strong>: Ubuntu 22.04 LTS</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="recommended-specifications">Recommended Specifications<a href="#recommended-specifications" class="hash-link" aria-label="Direct link to Recommended Specifications" title="Direct link to Recommended Specifications">​</a></h3>
+<ul>
+<li><strong>CPU</strong>: 6+ core processor (Intel i7/Ryzen 7 or better)</li>
+<li><strong>RAM</strong>: 16GB minimum, 32GB for complex simulations</li>
+<li><strong>Storage</strong>: 500GB+ SSD for fast compilation and simulation</li>
+<li><strong>OS</strong>: Ubuntu 22.04 LTS with real-time kernel</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="simulation-environment-requirements">Simulation Environment Requirements<a href="#simulation-environment-requirements" class="hash-link" aria-label="Direct link to Simulation Environment Requirements" title="Direct link to Simulation Environment Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="gazebo-simulation">Gazebo Simulation<a href="#gazebo-simulation" class="hash-link" aria-label="Direct link to Gazebo Simulation" title="Direct link to Gazebo Simulation">​</a></h3>
+<ul>
+<li><strong>CPU</strong>: Multi-core processor (8+ cores recommended)</li>
+<li><strong>RAM</strong>: 16GB minimum, 32GB for complex environments</li>
+<li><strong>GPU</strong>: Dedicated GPU with OpenGL 3.3+ support<!-- -->
+<ul>
+<li><strong>Minimum</strong>: NVIDIA GTX 1060 or AMD RX 580</li>
+<li><strong>Recommended</strong>: NVIDIA RTX 2070 or better</li>
+</ul>
+</li>
+<li><strong>VRAM</strong>: 6GB minimum, 8GB+ recommended</li>
+<li><strong>Storage</strong>: Fast SSD recommended for model loading</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="isaac-sim-requirements">Isaac Sim Requirements<a href="#isaac-sim-requirements" class="hash-link" aria-label="Direct link to Isaac Sim Requirements" title="Direct link to Isaac Sim Requirements">​</a></h3>
+<ul>
+<li><strong>CPU</strong>: High-performance multi-core processor (12+ cores)</li>
+<li><strong>RAM</strong>: 32GB minimum, 64GB recommended</li>
+<li><strong>GPU</strong>: NVIDIA GPU with compute capability 6.0+<!-- -->
+<ul>
+<li><strong>Minimum</strong>: NVIDIA RTX 2080 Ti</li>
+<li><strong>Recommended</strong>: NVIDIA RTX 3080 or RTX 4080</li>
+<li><strong>Professional</strong>: NVIDIA RTX A4000/A5000 or better</li>
+</ul>
+</li>
+<li><strong>VRAM</strong>: 11GB minimum, 16GB+ recommended</li>
+<li><strong>Storage</strong>: High-speed NVMe SSD (2GB+ for Isaac Sim installation)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nvidia-isaac-platform-requirements">NVIDIA Isaac Platform Requirements<a href="#nvidia-isaac-platform-requirements" class="hash-link" aria-label="Direct link to NVIDIA Isaac Platform Requirements" title="Direct link to NVIDIA Isaac Platform Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="isaac-ros-requirements">Isaac ROS Requirements<a href="#isaac-ros-requirements" class="hash-link" aria-label="Direct link to Isaac ROS Requirements" title="Direct link to Isaac ROS Requirements">​</a></h3>
+<ul>
+<li><strong>CPU</strong>: Multi-core processor (8+ cores)</li>
+<li><strong>RAM</strong>: 16GB minimum, 32GB recommended</li>
+<li><strong>GPU</strong>: NVIDIA GPU with compute capability 6.0+<!-- -->
+<ul>
+<li><strong>Minimum</strong>: NVIDIA GTX 1080 Ti or Tesla T4</li>
+<li><strong>Recommended</strong>: NVIDIA RTX 3070/3080 or better</li>
+<li><strong>Professional</strong>: NVIDIA RTX A4000, A5000, A6000</li>
+<li><strong>Data Center</strong>: NVIDIA A10, A30, A40, H100</li>
+</ul>
+</li>
+<li><strong>VRAM</strong>: 8GB minimum, 16GB+ recommended for complex applications</li>
+<li><strong>CUDA</strong>: CUDA 11.8 or later</li>
+<li><strong>Driver</strong>: NVIDIA driver 520 or later</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="jetson-platform-requirements">Jetson Platform Requirements<a href="#jetson-platform-requirements" class="hash-link" aria-label="Direct link to Jetson Platform Requirements" title="Direct link to Jetson Platform Requirements">​</a></h3>
+<ul>
+<li><strong>Jetson Orin</strong>: 8GB or 32GB RAM variants</li>
+<li><strong>Jetson AGX Xavier</strong>: 32GB RAM</li>
+<li><strong>Jetson Xavier NX</strong>: 8GB RAM</li>
+<li><strong>Jetson Nano</strong>: 4GB RAM (Limited Isaac functionality)</li>
+<li><strong>Power</strong>: Adequate power supply for selected Jetson module</li>
+<li><strong>Cooling</strong>: Proper thermal management for sustained performance</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mobile-robot-hardware">Mobile Robot Hardware<a href="#mobile-robot-hardware" class="hash-link" aria-label="Direct link to Mobile Robot Hardware" title="Direct link to Mobile Robot Hardware">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="computing-platform">Computing Platform<a href="#computing-platform" class="hash-link" aria-label="Direct link to Computing Platform" title="Direct link to Computing Platform">​</a></h3>
+<ul>
+<li><strong>Onboard Computer Options</strong>:<!-- -->
+<ul>
+<li><strong>Jetson Orin</strong>: Best performance for Isaac applications</li>
+<li><strong>Jetson AGX Xavier</strong>: Good balance of performance and power</li>
+<li><strong>Intel NUC</strong>: x86 compatibility, good for ROS 2</li>
+<li><strong>Raspberry Pi 4</strong>: Limited applications, basic ROS 2 only</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sensors">Sensors<a href="#sensors" class="hash-link" aria-label="Direct link to Sensors" title="Direct link to Sensors">​</a></h3>
+<ul>
+<li><strong>Camera Systems</strong>:<!-- -->
+<ul>
+<li><strong>RGB Camera</strong>: 640x480 minimum, 1920x1080 recommended</li>
+<li><strong>Stereo Camera</strong>: For depth perception (ZED, Intel RealSense)</li>
+<li><strong>Thermal Camera</strong>: Optional for specialized applications</li>
+<li><strong>LiDAR</strong>:<!-- -->
+<ul>
+<li><strong>2D LiDAR</strong>: Hokuyo UTM-30LX, Sick TIM571, or similar</li>
+<li><strong>3D LiDAR</strong>: Velodyne VLP-16, Ouster OS1, or similar</li>
+</ul>
+</li>
+<li><strong>IMU</strong>: 9-axis IMU for orientation and motion sensing</li>
+<li><strong>GPS</strong>: RTK-GPS for outdoor applications (optional)</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="actuators">Actuators<a href="#actuators" class="hash-link" aria-label="Direct link to Actuators" title="Direct link to Actuators">​</a></h3>
+<ul>
+<li><strong>Motors</strong>:<!-- -->
+<ul>
+<li><strong>Wheel motors</strong>: 2-4 DC motors with encoders</li>
+<li><strong>Torque</strong>: Sufficient for robot weight and terrain</li>
+<li><strong>Speed</strong>: Appropriate for application (0.5-2 m/s typical)</li>
+</ul>
+</li>
+<li><strong>Motor Controllers</strong>:<!-- -->
+<ul>
+<li><strong>PWM controllers</strong>: For basic motor control</li>
+<li><strong>CAN bus</strong>: For advanced motor control and feedback</li>
+<li><strong>Current sensing</strong>: For stall detection and safety</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="communication">Communication<a href="#communication" class="hash-link" aria-label="Direct link to Communication" title="Direct link to Communication">​</a></h3>
+<ul>
+<li><strong>Network</strong>: WiFi 802.11ac or better</li>
+<li><strong>Protocols</strong>: Ethernet, CAN, I2C, SPI as required</li>
+<li><strong>Range</strong>: Sufficient for operational area</li>
+<li><strong>Bandwidth</strong>: Adequate for sensor data transmission</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="manipulator-robot-hardware">Manipulator Robot Hardware<a href="#manipulator-robot-hardware" class="hash-link" aria-label="Direct link to Manipulator Robot Hardware" title="Direct link to Manipulator Robot Hardware">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="robotic-arms">Robotic Arms<a href="#robotic-arms" class="hash-link" aria-label="Direct link to Robotic Arms" title="Direct link to Robotic Arms">​</a></h3>
+<ul>
+<li><strong>Degrees of Freedom</strong>: 4-7 DOF depending on application</li>
+<li><strong>Payload</strong>: Sufficient for intended objects</li>
+<li><strong>Reach</strong>: Appropriate for workspace</li>
+<li><strong>Accuracy</strong>: Sub-centimeter positioning for precision tasks</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="end-effectors">End Effectors<a href="#end-effectors" class="hash-link" aria-label="Direct link to End Effectors" title="Direct link to End Effectors">​</a></h3>
+<ul>
+<li><strong>Grippers</strong>: Parallel, servo, or suction cup grippers</li>
+<li><strong>Sensors</strong>: Force/torque sensors, tactile sensors</li>
+<li><strong>Tool changers</strong>: For multi-tool applications</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="specialized-hardware">Specialized Hardware<a href="#specialized-hardware" class="hash-link" aria-label="Direct link to Specialized Hardware" title="Direct link to Specialized Hardware">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="perception-hardware">Perception Hardware<a href="#perception-hardware" class="hash-link" aria-label="Direct link to Perception Hardware" title="Direct link to Perception Hardware">​</a></h3>
+<ul>
+<li><strong>RGB-D Cameras</strong>: Intel RealSense D435/D455, Orbbec Astra</li>
+<li><strong>Event Cameras</strong>: For high-speed motion capture</li>
+<li><strong>Hyperspectral Cameras</strong>: For specialized material detection</li>
+<li><strong>Multi-modal Sensors</strong>: Combined sensing capabilities</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="processing-accelerators">Processing Accelerators<a href="#processing-accelerators" class="hash-link" aria-label="Direct link to Processing Accelerators" title="Direct link to Processing Accelerators">​</a></h3>
+<ul>
+<li><strong>TPUs</strong>: Google Coral for edge AI acceleration</li>
+<li><strong>FPGAs</strong>: For custom processing pipelines</li>
+<li><strong>Neural Processing Units</strong>: Specialized AI acceleration</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="power-requirements">Power Requirements<a href="#power-requirements" class="hash-link" aria-label="Direct link to Power Requirements" title="Direct link to Power Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mobile-robots">Mobile Robots<a href="#mobile-robots" class="hash-link" aria-label="Direct link to Mobile Robots" title="Direct link to Mobile Robots">​</a></h3>
+<ul>
+<li><strong>Battery</strong>: Lithium polymer or lithium iron phosphate</li>
+<li><strong>Capacity</strong>: Sufficient for operational duration plus safety margin</li>
+<li><strong>Voltage</strong>: Compatible with robot electronics</li>
+<li><strong>Charging</strong>: Automatic charging capability recommended</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stationary-systems">Stationary Systems<a href="#stationary-systems" class="hash-link" aria-label="Direct link to Stationary Systems" title="Direct link to Stationary Systems">​</a></h3>
+<ul>
+<li><strong>Power Supply</strong>: Adequate for peak power requirements</li>
+<li><strong>UPS</strong>: Uninterruptible power supply for critical systems</li>
+<li><strong>Power Management</strong>: Efficient power distribution and monitoring</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="environmental-requirements">Environmental Requirements<a href="#environmental-requirements" class="hash-link" aria-label="Direct link to Environmental Requirements" title="Direct link to Environmental Requirements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="operating-conditions">Operating Conditions<a href="#operating-conditions" class="hash-link" aria-label="Direct link to Operating Conditions" title="Direct link to Operating Conditions">​</a></h3>
+<ul>
+<li><strong>Temperature</strong>: -10°C to 50°C for most systems</li>
+<li><strong>Humidity</strong>: 10-90% non-condensing</li>
+<li><strong>Vibration</strong>: Shock and vibration resistance as required</li>
+<li><strong>IP Rating</strong>: Appropriate for environment (IP54/IP65/IP67)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-considerations">Deployment Considerations<a href="#deployment-considerations" class="hash-link" aria-label="Direct link to Deployment Considerations" title="Direct link to Deployment Considerations">​</a></h3>
+<ul>
+<li><strong>Indoor</strong>: Climate-controlled environment</li>
+<li><strong>Outdoor</strong>: Weather-resistant design required</li>
+<li><strong>Industrial</strong>: EMI/RFI protection and safety considerations</li>
+<li><strong>Medical</strong>: Specialized safety and regulatory compliance</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="network-infrastructure">Network Infrastructure<a href="#network-infrastructure" class="hash-link" aria-label="Direct link to Network Infrastructure" title="Direct link to Network Infrastructure">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="development-environment">Development Environment<a href="#development-environment" class="hash-link" aria-label="Direct link to Development Environment" title="Direct link to Development Environment">​</a></h3>
+<ul>
+<li><strong>Bandwidth</strong>: 100 Mbps minimum, 1 Gbps recommended</li>
+<li><strong>Latency</strong>: <code>&lt;10ms</code> for real-time applications</li>
+<li><strong>Reliability</strong>: Stable connection for robot operation</li>
+<li><strong>Security</strong>: WPA2/WPA3 encryption, firewall protection</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="production-environment">Production Environment<a href="#production-environment" class="hash-link" aria-label="Direct link to Production Environment" title="Direct link to Production Environment">​</a></h3>
+<ul>
+<li><strong>Redundancy</strong>: Backup network paths for critical operations</li>
+<li><strong>Quality of Service</strong>: Prioritized traffic for robot communication</li>
+<li><strong>Monitoring</strong>: Network performance monitoring</li>
+<li><strong>Management</strong>: Centralized network management tools</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="safety-and-compliance">Safety and Compliance<a href="#safety-and-compliance" class="hash-link" aria-label="Direct link to Safety and Compliance" title="Direct link to Safety and Compliance">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="electrical-safety">Electrical Safety<a href="#electrical-safety" class="hash-link" aria-label="Direct link to Electrical Safety" title="Direct link to Electrical Safety">​</a></h3>
+<ul>
+<li><strong>Certifications</strong>: CE, FCC, UL as applicable</li>
+<li><strong>Protection</strong>: Overcurrent, overvoltage, short-circuit protection</li>
+<li><strong>Grounding</strong>: Proper electrical grounding</li>
+<li><strong>EMC</strong>: Electromagnetic compatibility compliance</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mechanical-safety">Mechanical Safety<a href="#mechanical-safety" class="hash-link" aria-label="Direct link to Mechanical Safety" title="Direct link to Mechanical Safety">​</a></h3>
+<ul>
+<li><strong>Emergency stops</strong>: Readily accessible emergency stop mechanisms</li>
+<li><strong>Collision detection</strong>: Proximity sensors for collision avoidance</li>
+<li><strong>Speed limits</strong>: Software and hardware speed limiting</li>
+<li><strong>Physical barriers</strong>: Safety perimeters where required</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="performance-benchmarks">Performance Benchmarks<a href="#performance-benchmarks" class="hash-link" aria-label="Direct link to Performance Benchmarks" title="Direct link to Performance Benchmarks">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minimum-performance-requirements">Minimum Performance Requirements<a href="#minimum-performance-requirements" class="hash-link" aria-label="Direct link to Minimum Performance Requirements" title="Direct link to Minimum Performance Requirements">​</a></h3>
+<ul>
+<li><strong>ROS 2</strong>: 50Hz+ for basic control, 100Hz+ for dynamic systems</li>
+<li><strong>SLAM</strong>: 10Hz+ for mapping and localization</li>
+<li><strong>Perception</strong>: 15Hz+ for object detection and tracking</li>
+<li><strong>Planning</strong>: 5Hz+ for path planning and replanning</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="recommended-performance">Recommended Performance<a href="#recommended-performance" class="hash-link" aria-label="Direct link to Recommended Performance" title="Direct link to Recommended Performance">​</a></h3>
+<ul>
+<li><strong>ROS 2</strong>: 100Hz+ for responsive control</li>
+<li><strong>SLAM</strong>: 30Hz+ for real-time mapping</li>
+<li><strong>Perception</strong>: 30Hz+ for real-time object detection</li>
+<li><strong>Planning</strong>: 10Hz+ for dynamic replanning</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="budget-considerations">Budget Considerations<a href="#budget-considerations" class="hash-link" aria-label="Direct link to Budget Considerations" title="Direct link to Budget Considerations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="development-setup">Development Setup<a href="#development-setup" class="hash-link" aria-label="Direct link to Development Setup" title="Direct link to Development Setup">​</a></h3>
+<ul>
+<li><strong>Basic</strong>: $5,000 - $10,000 for entry-level development</li>
+<li><strong>Standard</strong>: $10,000 - $25,000 for comprehensive development</li>
+<li><strong>Advanced</strong>: $25,000+ for high-performance development</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="production-robot">Production Robot<a href="#production-robot" class="hash-link" aria-label="Direct link to Production Robot" title="Direct link to Production Robot">​</a></h3>
+<ul>
+<li><strong>Basic Mobile Robot</strong>: $15,000 - $30,000</li>
+<li><strong>Advanced Mobile Robot</strong>: $30,000 - $75,000</li>
+<li><strong>Manipulator System</strong>: $25,000 - $100,000+</li>
+<li><strong>Complete Solution</strong>: $50,000 - $200,000+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="procurement-guidelines">Procurement Guidelines<a href="#procurement-guidelines" class="hash-link" aria-label="Direct link to Procurement Guidelines" title="Direct link to Procurement Guidelines">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="vendor-selection">Vendor Selection<a href="#vendor-selection" class="hash-link" aria-label="Direct link to Vendor Selection" title="Direct link to Vendor Selection">​</a></h3>
+<ul>
+<li><strong>Reputation</strong>: Established vendors with good support</li>
+<li><strong>Compatibility</strong>: Ensure compatibility with ROS 2 and Isaac</li>
+<li><strong>Support</strong>: Available technical support and documentation</li>
+<li><strong>Lifecycle</strong>: Product lifecycle and availability</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="quality-assurance">Quality Assurance<a href="#quality-assurance" class="hash-link" aria-label="Direct link to Quality Assurance" title="Direct link to Quality Assurance">​</a></h3>
+<ul>
+<li><strong>Testing</strong>: Thorough testing before deployment</li>
+<li><strong>Validation</strong>: Validation in intended operating environment</li>
+<li><strong>Documentation</strong>: Complete documentation and specifications</li>
+<li><strong>Training</strong>: Training for operation and maintenance</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="maintenance-and-support">Maintenance and Support<a href="#maintenance-and-support" class="hash-link" aria-label="Direct link to Maintenance and Support" title="Direct link to Maintenance and Support">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hardware-maintenance">Hardware Maintenance<a href="#hardware-maintenance" class="hash-link" aria-label="Direct link to Hardware Maintenance" title="Direct link to Hardware Maintenance">​</a></h3>
+<ul>
+<li><strong>Schedule</strong>: Regular maintenance schedule</li>
+<li><strong>Spare Parts</strong>: Availability of spare parts</li>
+<li><strong>Calibration</strong>: Regular sensor and system calibration</li>
+<li><strong>Updates</strong>: Firmware and software updates</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="support-requirements">Support Requirements<a href="#support-requirements" class="hash-link" aria-label="Direct link to Support Requirements" title="Direct link to Support Requirements">​</a></h3>
+<ul>
+<li><strong>Documentation</strong>: Comprehensive user and maintenance documentation</li>
+<li><strong>Training</strong>: Training programs for operators and maintainers</li>
+<li><strong>Warranty</strong>: Appropriate warranty coverage</li>
+<li><strong>Service</strong>: Available service and support options</li>
+</ul>
+<p>This hardware requirements document should be used as a reference when planning robot development, procurement, and deployment. Always verify specific requirements with the latest ROS 2, Gazebo, and Isaac documentation, as hardware requirements may evolve with new releases.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book/tree/main/docs/hardware-requirements.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#general-system-requirements" class="table-of-contents__link toc-highlight">General System Requirements</a><ul><li><a href="#operating-system" class="table-of-contents__link toc-highlight">Operating System</a></li><li><a href="#basic-development-workstation" class="table-of-contents__link toc-highlight">Basic Development Workstation</a></li></ul></li><li><a href="#ros-2-development-requirements" class="table-of-contents__link toc-highlight">ROS 2 Development Requirements</a><ul><li><a href="#minimum-specifications" class="table-of-contents__link toc-highlight">Minimum Specifications</a></li><li><a href="#recommended-specifications" class="table-of-contents__link toc-highlight">Recommended Specifications</a></li></ul></li><li><a href="#simulation-environment-requirements" class="table-of-contents__link toc-highlight">Simulation Environment Requirements</a><ul><li><a href="#gazebo-simulation" class="table-of-contents__link toc-highlight">Gazebo Simulation</a></li><li><a href="#isaac-sim-requirements" class="table-of-contents__link toc-highlight">Isaac Sim Requirements</a></li></ul></li><li><a href="#nvidia-isaac-platform-requirements" class="table-of-contents__link toc-highlight">NVIDIA Isaac Platform Requirements</a><ul><li><a href="#isaac-ros-requirements" class="table-of-contents__link toc-highlight">Isaac ROS Requirements</a></li><li><a href="#jetson-platform-requirements" class="table-of-contents__link toc-highlight">Jetson Platform Requirements</a></li></ul></li><li><a href="#mobile-robot-hardware" class="table-of-contents__link toc-highlight">Mobile Robot Hardware</a><ul><li><a href="#computing-platform" class="table-of-contents__link toc-highlight">Computing Platform</a></li><li><a href="#sensors" class="table-of-contents__link toc-highlight">Sensors</a></li><li><a href="#actuators" class="table-of-contents__link toc-highlight">Actuators</a></li><li><a href="#communication" class="table-of-contents__link toc-highlight">Communication</a></li></ul></li><li><a href="#manipulator-robot-hardware" class="table-of-contents__link toc-highlight">Manipulator Robot Hardware</a><ul><li><a href="#robotic-arms" class="table-of-contents__link toc-highlight">Robotic Arms</a></li><li><a href="#end-effectors" class="table-of-contents__link toc-highlight">End Effectors</a></li></ul></li><li><a href="#specialized-hardware" class="table-of-contents__link toc-highlight">Specialized Hardware</a><ul><li><a href="#perception-hardware" class="table-of-contents__link toc-highlight">Perception Hardware</a></li><li><a href="#processing-accelerators" class="table-of-contents__link toc-highlight">Processing Accelerators</a></li></ul></li><li><a href="#power-requirements" class="table-of-contents__link toc-highlight">Power Requirements</a><ul><li><a href="#mobile-robots" class="table-of-contents__link toc-highlight">Mobile Robots</a></li><li><a href="#stationary-systems" class="table-of-contents__link toc-highlight">Stationary Systems</a></li></ul></li><li><a href="#environmental-requirements" class="table-of-contents__link toc-highlight">Environmental Requirements</a><ul><li><a href="#operating-conditions" class="table-of-contents__link toc-highlight">Operating Conditions</a></li><li><a href="#deployment-considerations" class="table-of-contents__link toc-highlight">Deployment Considerations</a></li></ul></li><li><a href="#network-infrastructure" class="table-of-contents__link toc-highlight">Network Infrastructure</a><ul><li><a href="#development-environment" class="table-of-contents__link toc-highlight">Development Environment</a></li><li><a href="#production-environment" class="table-of-contents__link toc-highlight">Production Environment</a></li></ul></li><li><a href="#safety-and-compliance" class="table-of-contents__link toc-highlight">Safety and Compliance</a><ul><li><a href="#electrical-safety" class="table-of-contents__link toc-highlight">Electrical Safety</a></li><li><a href="#mechanical-safety" class="table-of-contents__link toc-highlight">Mechanical Safety</a></li></ul></li><li><a href="#performance-benchmarks" class="table-of-contents__link toc-highlight">Performance Benchmarks</a><ul><li><a href="#minimum-performance-requirements" class="table-of-contents__link toc-highlight">Minimum Performance Requirements</a></li><li><a href="#recommended-performance" class="table-of-contents__link toc-highlight">Recommended Performance</a></li></ul></li><li><a href="#budget-considerations" class="table-of-contents__link toc-highlight">Budget Considerations</a><ul><li><a href="#development-setup" class="table-of-contents__link toc-highlight">Development Setup</a></li><li><a href="#production-robot" class="table-of-contents__link toc-highlight">Production Robot</a></li></ul></li><li><a href="#procurement-guidelines" class="table-of-contents__link toc-highlight">Procurement Guidelines</a><ul><li><a href="#vendor-selection" class="table-of-contents__link toc-highlight">Vendor Selection</a></li><li><a href="#quality-assurance" class="table-of-contents__link toc-highlight">Quality Assurance</a></li></ul></li><li><a href="#maintenance-and-support" class="table-of-contents__link toc-highlight">Maintenance and Support</a><ul><li><a href="#hardware-maintenance" class="table-of-contents__link toc-highlight">Hardware Maintenance</a></li><li><a href="#support-requirements" class="table-of-contents__link toc-highlight">Support Requirements</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Humanoid-AI-Book/docs/intro">Introduction</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

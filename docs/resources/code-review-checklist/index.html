@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-resources/code-review-checklist" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.1.0">
+<title data-rh="true">Code Review Checklist | Physical AI &amp; Humanoid Robotics Textbook</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/code-review-checklist"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Code Review Checklist | Physical AI &amp; Humanoid Robotics Textbook"><meta data-rh="true" name="description" content="This checklist provides a comprehensive framework for conducting effective code reviews in robotics and AI projects, ensuring code quality, maintainability, and adherence to best practices."><meta data-rh="true" property="og:description" content="This checklist provides a comprehensive framework for conducting effective code reviews in robotics and AI projects, ensuring code quality, maintainability, and adherence to best practices."><link data-rh="true" rel="icon" href="/Humanoid-AI-Book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/code-review-checklist"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/code-review-checklist" hreflang="en"><link data-rh="true" rel="alternate" href="https://abdullatifjaffrani.github.io/Humanoid-AI-Book/docs/resources/code-review-checklist" hreflang="x-default"><link rel="stylesheet" href="/Humanoid-AI-Book/assets/css/styles.f5ce8ed2.css">
+<script src="/Humanoid-AI-Book/assets/js/runtime~main.eda54158.js" defer="defer"></script>
+<script src="/Humanoid-AI-Book/assets/js/main.748b95ec.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Humanoid-AI-Book/"><div class="navbar__logo"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--light_rzkv"><img src="/Humanoid-AI-Book/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Logo" class="themedComponent__dKv themedComponent--dark_mMAk"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/Humanoid-AI-Book/docs/intro">Textbook</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Code Review Checklist</h1>
+<p>This checklist provides a comprehensive framework for conducting effective code reviews in robotics and AI projects, ensuring code quality, maintainability, and adherence to best practices.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="general-code-quality">General Code Quality<a href="#general-code-quality" class="hash-link" aria-label="Direct link to General Code Quality" title="Direct link to General Code Quality">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="functionality">Functionality<a href="#functionality" class="hash-link" aria-label="Direct link to Functionality" title="Direct link to Functionality">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Does the code correctly implement the intended functionality?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are all requirements satisfied by the implementation?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are edge cases and error conditions properly handled?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Does the code behave correctly under expected load conditions?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="code-style-and-readability">Code Style and Readability<a href="#code-style-and-readability" class="hash-link" aria-label="Direct link to Code Style and Readability" title="Direct link to Code Style and Readability">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Does the code follow established style guidelines (e.g., PEP 8 for Python, ROS 2 C++ style)?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are variable and function names descriptive and consistent?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is the code well-commented with appropriate level of detail?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are complex algorithms or decisions explained in comments?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="architecture-and-design">Architecture and Design<a href="#architecture-and-design" class="hash-link" aria-label="Direct link to Architecture and Design" title="Direct link to Architecture and Design">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Does the code follow established architectural patterns?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are interfaces well-defined and appropriately abstracted?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is there appropriate separation of concerns?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are design patterns applied correctly where applicable?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="robotics-specific-considerations">Robotics-Specific Considerations<a href="#robotics-specific-considerations" class="hash-link" aria-label="Direct link to Robotics-Specific Considerations" title="Direct link to Robotics-Specific Considerations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="real-time-performance">Real-time Performance<a href="#real-time-performance" class="hash-link" aria-label="Direct link to Real-time Performance" title="Direct link to Real-time Performance">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are real-time constraints properly considered in the implementation?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there any potential blocking operations in time-critical paths?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is the code deterministic where determinism is required?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are timing assumptions clearly documented?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="safety-and-reliability">Safety and Reliability<a href="#safety-and-reliability" class="hash-link" aria-label="Direct link to Safety and Reliability" title="Direct link to Safety and Reliability">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are safety-critical functions properly validated?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there appropriate safety interlocks and checks?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are error conditions handled gracefully?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is there appropriate logging for debugging and monitoring?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hardware-integration">Hardware Integration<a href="#hardware-integration" class="hash-link" aria-label="Direct link to Hardware Integration" title="Direct link to Hardware Integration">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are hardware interfaces properly abstracted?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there appropriate error handling for hardware failures?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are resource constraints (memory, computation) considered?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are hardware-specific configurations appropriately parameterized?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ros-2-specific-checks">ROS 2 Specific Checks<a href="#ros-2-specific-checks" class="hash-link" aria-label="Direct link to ROS 2 Specific Checks" title="Direct link to ROS 2 Specific Checks">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="node-design">Node Design<a href="#node-design" class="hash-link" aria-label="Direct link to Node Design" title="Direct link to Node Design">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Does the node have a single, clear responsibility?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are parameters properly defined with appropriate defaults?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are publishers, subscribers, services, and actions appropriately configured?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is the node lifecycle properly managed?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="communication-patterns">Communication Patterns<a href="#communication-patterns" class="hash-link" aria-label="Direct link to Communication Patterns" title="Direct link to Communication Patterns">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are appropriate QoS settings used for topics and services?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are message types properly defined and documented?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is data synchronization properly handled?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are appropriate communication patterns used (topics vs services vs actions)?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="launch-and-configuration">Launch and Configuration<a href="#launch-and-configuration" class="hash-link" aria-label="Direct link to Launch and Configuration" title="Direct link to Launch and Configuration">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are launch files properly structured and documented?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are parameters organized logically in YAML files?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are default configurations appropriate for different environments?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are dependencies clearly specified?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ai-and-machine-learning-specifics">AI and Machine Learning Specifics<a href="#ai-and-machine-learning-specifics" class="hash-link" aria-label="Direct link to AI and Machine Learning Specifics" title="Direct link to AI and Machine Learning Specifics">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="model-integration">Model Integration<a href="#model-integration" class="hash-link" aria-label="Direct link to Model Integration" title="Direct link to Model Integration">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are ML models properly loaded and validated?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are model inputs and outputs properly formatted?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there appropriate fallbacks when models fail?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are model versions and dependencies tracked?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance-considerations">Performance Considerations<a href="#performance-considerations" class="hash-link" aria-label="Direct link to Performance Considerations" title="Direct link to Performance Considerations">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are inference operations optimized for target hardware?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there appropriate batch processing strategies?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are memory usage patterns efficient?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there strategies for handling model drift?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="testing-and-validation">Testing and Validation<a href="#testing-and-validation" class="hash-link" aria-label="Direct link to Testing and Validation" title="Direct link to Testing and Validation">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="unit-tests">Unit Tests<a href="#unit-tests" class="hash-link" aria-label="Direct link to Unit Tests" title="Direct link to Unit Tests">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there sufficient unit tests for all functionality?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Do tests cover both normal and error conditions?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are edge cases adequately tested?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Do tests include appropriate assertions and validations?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="integration-tests">Integration Tests<a href="#integration-tests" class="hash-link" aria-label="Direct link to Integration Tests" title="Direct link to Integration Tests">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are component interactions properly tested?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are system-level behaviors validated?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are performance requirements verified through tests?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are hardware-in-the-loop tests appropriately designed?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="test-coverage">Test Coverage<a href="#test-coverage" class="hash-link" aria-label="Direct link to Test Coverage" title="Direct link to Test Coverage">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Does the code achieve appropriate test coverage thresholds?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are critical paths adequately covered by tests?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are security-sensitive functions well-tested?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are failure scenarios covered by tests?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="security-considerations">Security Considerations<a href="#security-considerations" class="hash-link" aria-label="Direct link to Security Considerations" title="Direct link to Security Considerations">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="input-validation">Input Validation<a href="#input-validation" class="hash-link" aria-label="Direct link to Input Validation" title="Direct link to Input Validation">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are all external inputs properly validated?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are buffer overflows and injection attacks prevented?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are file paths and system commands properly sanitized?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are ROS parameters validated before use?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="access-control">Access Control<a href="#access-control" class="hash-link" aria-label="Direct link to Access Control" title="Direct link to Access Control">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are sensitive operations properly authenticated?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are ROS topics and services appropriately secured?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are network communications encrypted where needed?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are default credentials changed or removed?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="performance-and-optimization">Performance and Optimization<a href="#performance-and-optimization" class="hash-link" aria-label="Direct link to Performance and Optimization" title="Direct link to Performance and Optimization">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="resource-management">Resource Management<a href="#resource-management" class="hash-link" aria-label="Direct link to Resource Management" title="Direct link to Resource Management">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are memory allocations and deallocations properly managed?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there appropriate strategies for memory reuse?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are system resources properly released?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there strategies for handling resource exhaustion?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="computational-efficiency">Computational Efficiency<a href="#computational-efficiency" class="hash-link" aria-label="Direct link to Computational Efficiency" title="Direct link to Computational Efficiency">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are algorithms appropriate for the computational constraints?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are data structures optimized for the use case?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are expensive operations appropriately cached?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there unnecessary computations that can be eliminated?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-and-maintainability">Documentation and Maintainability<a href="#documentation-and-maintainability" class="hash-link" aria-label="Direct link to Documentation and Maintainability" title="Direct link to Documentation and Maintainability">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="inline-documentation">Inline Documentation<a href="#inline-documentation" class="hash-link" aria-label="Direct link to Inline Documentation" title="Direct link to Inline Documentation">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are complex algorithms properly documented with comments?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are API functions documented with parameter descriptions?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are assumptions and limitations clearly stated?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are TODOs and FIXMEs appropriately marked?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="external-documentation">External Documentation<a href="#external-documentation" class="hash-link" aria-label="Direct link to External Documentation" title="Direct link to External Documentation">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is the code referenced in appropriate user documentation?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are API changes reflected in external documentation?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are configuration parameters properly documented?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are usage examples provided where appropriate?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="error-handling-and-logging">Error Handling and Logging<a href="#error-handling-and-logging" class="hash-link" aria-label="Direct link to Error Handling and Logging" title="Direct link to Error Handling and Logging">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="error-detection">Error Detection<a href="#error-detection" class="hash-link" aria-label="Direct link to Error Detection" title="Direct link to Error Detection">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are errors detected and handled appropriately?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are error conditions clearly distinguished from normal conditions?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are exceptions properly caught and handled?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are error messages informative and actionable?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="logging-strategy">Logging Strategy<a href="#logging-strategy" class="hash-link" aria-label="Direct link to Logging Strategy" title="Direct link to Logging Strategy">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are appropriate log levels used consistently?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are sensitive information excluded from logs?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are log messages informative for debugging?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are performance-critical paths not impacted by logging?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="version-control-and-deployment">Version Control and Deployment<a href="#version-control-and-deployment" class="hash-link" aria-label="Direct link to Version Control and Deployment" title="Direct link to Version Control and Deployment">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="code-structure">Code Structure<a href="#code-structure" class="hash-link" aria-label="Direct link to Code Structure" title="Direct link to Code Structure">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are changes appropriately modularized?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are dependencies clearly specified?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are configuration files properly separated from code?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are environment-specific settings parameterized?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-considerations">Deployment Considerations<a href="#deployment-considerations" class="hash-link" aria-label="Direct link to Deployment Considerations" title="Direct link to Deployment Considerations">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is the code compatible with target deployment environments?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are resource requirements clearly documented?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are there strategies for graceful degradation?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are rollback procedures considered in the design?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="code-review-process">Code Review Process<a href="#code-review-process" class="hash-link" aria-label="Direct link to Code Review Process" title="Direct link to Code Review Process">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="review-quality">Review Quality<a href="#review-quality" class="hash-link" aria-label="Direct link to Review Quality" title="Direct link to Review Quality">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Have all checklist items been considered?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are feedback comments specific and actionable?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are positive aspects of the code acknowledged?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are severity levels appropriately assigned to issues?</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="follow-up-actions">Follow-up Actions<a href="#follow-up-actions" class="hash-link" aria-label="Direct link to Follow-up Actions" title="Direct link to Follow-up Actions">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are required changes clearly specified?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are suggestions prioritized appropriately?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Is the review timeline realistic?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Are next steps clearly communicated?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="common-issues-to-look-for">Common Issues to Look For<a href="#common-issues-to-look-for" class="hash-link" aria-label="Direct link to Common Issues to Look For" title="Direct link to Common Issues to Look For">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance-issues">Performance Issues<a href="#performance-issues" class="hash-link" aria-label="Direct link to Performance Issues" title="Direct link to Performance Issues">​</a></h3>
+<ul>
+<li>Memory leaks or inefficient memory usage</li>
+<li>Blocking operations in critical paths</li>
+<li>Inefficient algorithms for the problem size</li>
+<li>Unnecessary computations or data copies</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="safety-issues">Safety Issues<a href="#safety-issues" class="hash-link" aria-label="Direct link to Safety Issues" title="Direct link to Safety Issues">​</a></h3>
+<ul>
+<li>Missing safety checks in critical functions</li>
+<li>Improper handling of sensor failures</li>
+<li>Missing validation of actuator commands</li>
+<li>Inadequate error recovery mechanisms</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="maintainability-issues">Maintainability Issues<a href="#maintainability-issues" class="hash-link" aria-label="Direct link to Maintainability Issues" title="Direct link to Maintainability Issues">​</a></h3>
+<ul>
+<li>Overly complex functions that should be refactored</li>
+<li>Duplicated code that should be consolidated</li>
+<li>Inconsistent naming or coding patterns</li>
+<li>Tight coupling between components</li>
+</ul>
+<p>Use this checklist as a starting point for code reviews, adapting it as needed for your specific project requirements and team practices.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book/tree/main/docs/resources/code-review-checklist.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#general-code-quality" class="table-of-contents__link toc-highlight">General Code Quality</a><ul><li><a href="#functionality" class="table-of-contents__link toc-highlight">Functionality</a></li><li><a href="#code-style-and-readability" class="table-of-contents__link toc-highlight">Code Style and Readability</a></li><li><a href="#architecture-and-design" class="table-of-contents__link toc-highlight">Architecture and Design</a></li></ul></li><li><a href="#robotics-specific-considerations" class="table-of-contents__link toc-highlight">Robotics-Specific Considerations</a><ul><li><a href="#real-time-performance" class="table-of-contents__link toc-highlight">Real-time Performance</a></li><li><a href="#safety-and-reliability" class="table-of-contents__link toc-highlight">Safety and Reliability</a></li><li><a href="#hardware-integration" class="table-of-contents__link toc-highlight">Hardware Integration</a></li></ul></li><li><a href="#ros-2-specific-checks" class="table-of-contents__link toc-highlight">ROS 2 Specific Checks</a><ul><li><a href="#node-design" class="table-of-contents__link toc-highlight">Node Design</a></li><li><a href="#communication-patterns" class="table-of-contents__link toc-highlight">Communication Patterns</a></li><li><a href="#launch-and-configuration" class="table-of-contents__link toc-highlight">Launch and Configuration</a></li></ul></li><li><a href="#ai-and-machine-learning-specifics" class="table-of-contents__link toc-highlight">AI and Machine Learning Specifics</a><ul><li><a href="#model-integration" class="table-of-contents__link toc-highlight">Model Integration</a></li><li><a href="#performance-considerations" class="table-of-contents__link toc-highlight">Performance Considerations</a></li></ul></li><li><a href="#testing-and-validation" class="table-of-contents__link toc-highlight">Testing and Validation</a><ul><li><a href="#unit-tests" class="table-of-contents__link toc-highlight">Unit Tests</a></li><li><a href="#integration-tests" class="table-of-contents__link toc-highlight">Integration Tests</a></li><li><a href="#test-coverage" class="table-of-contents__link toc-highlight">Test Coverage</a></li></ul></li><li><a href="#security-considerations" class="table-of-contents__link toc-highlight">Security Considerations</a><ul><li><a href="#input-validation" class="table-of-contents__link toc-highlight">Input Validation</a></li><li><a href="#access-control" class="table-of-contents__link toc-highlight">Access Control</a></li></ul></li><li><a href="#performance-and-optimization" class="table-of-contents__link toc-highlight">Performance and Optimization</a><ul><li><a href="#resource-management" class="table-of-contents__link toc-highlight">Resource Management</a></li><li><a href="#computational-efficiency" class="table-of-contents__link toc-highlight">Computational Efficiency</a></li></ul></li><li><a href="#documentation-and-maintainability" class="table-of-contents__link toc-highlight">Documentation and Maintainability</a><ul><li><a href="#inline-documentation" class="table-of-contents__link toc-highlight">Inline Documentation</a></li><li><a href="#external-documentation" class="table-of-contents__link toc-highlight">External Documentation</a></li></ul></li><li><a href="#error-handling-and-logging" class="table-of-contents__link toc-highlight">Error Handling and Logging</a><ul><li><a href="#error-detection" class="table-of-contents__link toc-highlight">Error Detection</a></li><li><a href="#logging-strategy" class="table-of-contents__link toc-highlight">Logging Strategy</a></li></ul></li><li><a href="#version-control-and-deployment" class="table-of-contents__link toc-highlight">Version Control and Deployment</a><ul><li><a href="#code-structure" class="table-of-contents__link toc-highlight">Code Structure</a></li><li><a href="#deployment-considerations" class="table-of-contents__link toc-highlight">Deployment Considerations</a></li></ul></li><li><a href="#code-review-process" class="table-of-contents__link toc-highlight">Code Review Process</a><ul><li><a href="#review-quality" class="table-of-contents__link toc-highlight">Review Quality</a></li><li><a href="#follow-up-actions" class="table-of-contents__link toc-highlight">Follow-up Actions</a></li></ul></li><li><a href="#common-issues-to-look-for" class="table-of-contents__link toc-highlight">Common Issues to Look For</a><ul><li><a href="#performance-issues" class="table-of-contents__link toc-highlight">Performance Issues</a></li><li><a href="#safety-issues" class="table-of-contents__link toc-highlight">Safety Issues</a></li><li><a href="#maintainability-issues" class="table-of-contents__link toc-highlight">Maintainability Issues</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Humanoid-AI-Book/docs/intro">Introduction</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/abdullatifjaffrani/Humanoid-AI-Book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

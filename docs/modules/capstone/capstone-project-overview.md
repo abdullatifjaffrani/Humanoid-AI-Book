@@ -66,8 +66,8 @@ Students will demonstrate mastery of:
 - **Navigation**: Success rate >85% in complex environments
 - **Language Understanding**: >90% command interpretation accuracy
 - **Manipulation**: >75% success rate for basic grasping tasks
-- **System Response**: <2 second response time for simple commands
-- **Reliability**: <5% system failures during 30-minute operation
+- **System Response**: `<2` second response time for simple commands
+- **Reliability**: `<5%` system failures during 30-minute operation
 
 ## Evaluation Criteria
 

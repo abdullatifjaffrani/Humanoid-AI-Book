@@ -144,7 +144,7 @@ Each category contains specific criteria with detailed performance indicators fo
 - Smooth, efficient path planning and execution
 - Effective obstacle avoidance and recovery
 - Accurate localization and mapping
-- Fast response times (<1 second for path planning)
+- Fast response times (`<1` second for path planning)
 - Safe operation in dynamic environments
 
 #### Proficient (B, 80-89%)
@@ -164,7 +164,7 @@ Each category contains specific criteria with detailed performance indicators fo
 - Generally safe operation
 
 #### Needs Improvement (D, 60-69%)
-- Navigation success rate <75% in complex environments
+- Navigation success rate `<75%` in complex environments
 - Poor path planning and execution
 - Poor obstacle avoidance
 - Inaccurate localization
@@ -198,8 +198,8 @@ Each category contains specific criteria with detailed performance indicators fo
 - Moderate false rates
 
 #### Needs Improvement (D, 60-69%)
-- Object detection accuracy <75%
-- Slow processing (<10 FPS)
+- Object detection accuracy `<75%`
+- Slow processing (`<10` FPS)
 - Poor performance in varying conditions
 - Poor 3D understanding
 - Poor sensor fusion
@@ -212,7 +212,7 @@ Each category contains specific criteria with detailed performance indicators fo
 - Natural language understanding in complex scenarios
 - Effective handling of ambiguous commands
 - Context-aware responses
-- Fast response times (<1 second)
+- Fast response times (`<1` second)
 - Robust to noise and variations
 
 #### Proficient (B, 80-89%)
@@ -232,7 +232,7 @@ Each category contains specific criteria with detailed performance indicators fo
 - Limited robustness
 
 #### Needs Improvement (D, 60-69%)
-- Command interpretation accuracy <75%
+- Command interpretation accuracy `<75%`
 - Poor understanding of natural language
 - Poor handling of ambiguous commands
 - Little to no context awareness

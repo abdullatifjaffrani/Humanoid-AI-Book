@@ -35,5 +35,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages-staging
           publish_dir: ./build
+          # Add .nojekyll file to allow files and directories starting with underscore
+          enable_jekyll: false
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com

@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img" aria-label="ROS 2 Architecture Diagram showing layered components: Client Libraries, ROS Client Library, Middleware (DDS), and Operating System.">
+  <title>ROS 2 Architecture Diagram</title>
+  <desc>Illustration of the layered architecture of ROS 2 showing four main components: Client Libraries (rclcpp, rclpy), ROS Client Library (rcl), Middleware (DDS Implementation), and Operating System (Linux, Windows, macOS).</desc>
   <rect width="800" height="400" fill="#f0f8ff"/>
   <rect x="50" y="50" width="700" height="300" fill="white" stroke="#ccc" stroke-width="2" rx="10"/>
   <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="bold">

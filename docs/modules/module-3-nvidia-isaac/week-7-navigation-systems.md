@@ -1,523 +1,435 @@
 ---
-title: Week 7 - Navigation Systems
+title: Week 7 - Isaac Navigation Systems
 sidebar_position: 2
 week: 7
 module: module-3-nvidia-isaac
 learningObjectives:
-  - Understand NVIDIA Isaac's navigation capabilities and architecture
-  - Implement GPU-accelerated SLAM and path planning
-  - Configure navigation parameters for different environments
+  - Understand NVIDIA Isaac navigation stack components
+  - Configure Isaac navigation for robot platforms
   - Integrate Isaac navigation with perception systems
-  - Deploy navigation systems on NVIDIA hardware platforms
+  - Optimize navigation performance with GPU acceleration
+  - Implement navigation safety and recovery behaviors
 prerequisites:
-  - Week 1-6 content: ROS 2, Simulation, and Isaac Platform Overview
-  - Understanding of SLAM concepts
-  - Experience with ROS 2 Navigation2 stack
-  - NVIDIA GPU with CUDA support
+  - Week 1-6 content: Complete textbook modules
+  - Isaac ROS platform setup
+  - Understanding of ROS 2 navigation concepts
+  - GPU-accelerated perception systems
 description: Advanced navigation systems using NVIDIA Isaac platform with GPU acceleration
 ---
 
-# Week 7: Navigation Systems
+# Week 7: Isaac Navigation Systems
 
 ## Learning Objectives
 
-- Understand NVIDIA Isaac's navigation capabilities and architecture
-- Implement GPU-accelerated SLAM and path planning
-- Configure navigation parameters for different environments
+- Understand NVIDIA Isaac navigation stack components
+- Configure Isaac navigation for robot platforms
 - Integrate Isaac navigation with perception systems
-- Deploy navigation systems on NVIDIA hardware platforms
+- Optimize navigation performance with GPU acceleration
+- Implement navigation safety and recovery behaviors
 
 ## Overview
 
-Navigation is a critical capability for autonomous robots, requiring the integration of perception, mapping, localization, and path planning. NVIDIA Isaac provides advanced navigation capabilities that leverage GPU acceleration to achieve real-time performance with high accuracy. This week explores Isaac's navigation systems, including GPU-accelerated SLAM, path planning, and obstacle avoidance.
+The NVIDIA Isaac navigation stack builds upon traditional ROS 2 navigation while incorporating GPU acceleration for enhanced performance. This week explores how to configure and optimize navigation systems using Isaac's hardware-accelerated capabilities, including perception integration, path planning, and dynamic obstacle avoidance.
 
-Isaac's navigation stack builds upon the ROS 2 Navigation2 framework while adding hardware acceleration for computationally intensive tasks. The system includes:
-
-- **GPU-accelerated SLAM**: Real-time mapping and localization
-- **Visual-inertial odometry**: Enhanced pose estimation using visual and IMU data
-- **Dynamic path planning**: Real-time path planning with obstacle avoidance
-- **Multi-sensor fusion**: Integration of various sensor modalities
+Isaac Navigation provides several key advantages over traditional navigation:
+- **GPU-accelerated path planning**: Faster computation of optimal paths
+- **Real-time obstacle detection**: Accelerated processing of sensor data for dynamic obstacle avoidance
+- **Enhanced localization**: GPU-accelerated AMCL and visual-inertial odometry
+- **Multi-sensor fusion**: Accelerated integration of multiple sensor modalities
 
 ## Isaac Navigation Architecture
 
-### Navigation Stack Components
+### Core Components
 
-The Isaac navigation stack consists of several key components:
+The Isaac Navigation stack includes several specialized components:
 
-1. **Isaac ROS Visual SLAM**: GPU-accelerated simultaneous localization and mapping
-2. **Isaac ROS Nav2 Accelerators**: GPU-accelerated navigation algorithms
-3. **Isaac Perception**: Accelerated perception for obstacle detection
-4. **Isaac Control**: Hardware-accelerated motion control
-5. **Isaac Fleet Management**: Multi-robot navigation coordination
+1. **Isaac ROS Navigation 2**: GPU-accelerated navigation stack with enhanced planners
+2. **Isaac ROS Visual Inertial Odometry**: Hardware-accelerated visual-inertial odometry
+3. **Isaac ROS Occupancy Grids**: Accelerated costmap computation and management
+4. **Isaac ROS Path Planning**: GPU-accelerated path planners (Dijkstra, A*, RRT variants)
 
-### Integration with Navigation2
+### GPU-Accelerated Navigation Features
 
-Isaac navigation extends the standard Navigation2 stack with acceleration:
+Isaac Navigation enhances traditional navigation with:
 
+- **Parallel Path Planning**: Multiple path candidates computed simultaneously
+- **Accelerated Costmap Updates**: Real-time updates using GPU computation
+- **Dynamic Obstacle Processing**: Real-time detection and avoidance of moving obstacles
+- **Multi-resolution Maps**: Efficient handling of different map resolutions
+
+## Navigation Configuration
+
+### Isaac Navigation Setup
+
+Configuration files for Isaac Navigation include additional parameters for GPU acceleration:
+
+```yaml
+# Isaac Navigation Configuration
+amcl:
+  ros__parameters:
+    use_gpu: true  # Enable GPU acceleration for particle filter
+    max_particles: 5000  # Increased for better accuracy
+    min_particles: 500
+    alpha1: 0.2  # Odometry error model
+    alpha2: 0.2
+    alpha3: 0.2
+    alpha4: 0.2
+    alpha5: 0.2
+    pf_err: 0.05
+    pf_z: 0.99
+    initial_pose:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      yaw: 0.0
+    initial_covariance: [0.1, 0.0, 0.0, 0.0, 0.0, 0.0,
+                         0.0, 0.1, 0.0, 0.0, 0.0, 0.0,
+                         0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                         0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                         0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                         0.0, 0.0, 0.0, 0.0, 0.0, 0.05]
+
+# GPU-accelerated costmap configuration
+local_costmap:
+  ros__parameters:
+    update_frequency: 10.0
+    publish_frequency: 5.0
+    global_frame: odom
+    robot_base_frame: base_link
+    use_gpu: true  # Enable GPU acceleration for costmap operations
+    rolling_window: true
+    width: 10
+    height: 10
+    resolution: 0.05
+    transform_tolerance: 0.5
+    observation_sources: scan
+    scan:
+      topic: /scan
+      sensor_frame: laser_frame
+      max_obstacle_height: 2.0
+      clearing: true
+      marking: true
+      data_type: LaserScan
+      raytrace_max_range: 10.0
+      raytrace_min_range: 0.0
+      obstacle_max_range: 5.0
+      obstacle_min_range: 0.0
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Perception    │───▶│  Accelerated     │───▶│  Path Planning  │
-│   (Isaac ROS)   │    │  Navigation      │    │  (Isaac ROS)    │
-└─────────────────┘    │  (Nav2 + GPU)    │    └─────────────────┘
-                       └──────────────────┘
-                                │
-                                ▼
-                       ┌─────────────────┐
-                       │  Control &      │
-                       │  Execution      │
-                       └─────────────────┘
-```
 
-## GPU-Accelerated SLAM
+## GPU-Accelerated Path Planning
 
-### Visual SLAM Concepts
+### Isaac Path Planners
 
-Visual SLAM (Simultaneous Localization and Mapping) uses visual sensors to build a map of the environment while simultaneously determining the robot's position within that map. Isaac's GPU-accelerated Visual SLAM provides:
+Isaac provides several GPU-accelerated path planning algorithms:
 
-- **Real-time Processing**: 30+ FPS processing on supported GPUs
-- **Accurate Tracking**: Sub-centimeter localization accuracy
-- **Robust Mapping**: Stable map building in various environments
-- **Multi-camera Support**: Integration of multiple camera sensors
+1. **Isaac A***: Optimized A* algorithm with GPU parallelization
+2. **Isaac Dijkstra**: GPU-accelerated Dijkstra's algorithm for optimal path planning
+3. **Isaac RRT**: Hardware-accelerated Rapidly-exploring Random Tree for complex environments
+4. **Isaac Trajectory Optimizer**: GPU-accelerated trajectory optimization
 
-### Isaac ROS Visual SLAM Pipeline
-
-The Isaac ROS Visual SLAM pipeline includes:
-
-1. **Feature Detection**: GPU-accelerated feature extraction
-2. **Feature Matching**: Accelerated correspondence finding
-3. **Pose Estimation**: Real-time camera pose calculation
-4. **Map Building**: GPU-accelerated map construction
-5. **Loop Closure**: Accelerated detection of revisited locations
-
-### Implementation Example
+### Path Planning Implementation
 
 ```python
 import rclpy
 from rclpy.node import Node
-from sensor_msgs.msg import Image, CameraInfo
+from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
-from nav_msgs.msg import Odometry
-from cv_bridge import CvBridge
 import numpy as np
 
-class IsaacVisualSLAMNode(Node):
+class IsaacPathPlanner(Node):
     def __init__(self):
-        super().__init__('isaac_visual_slam_node')
+        super().__init__('isaac_path_planner')
 
-        # Publishers and subscribers
-        self.left_image_sub = self.create_subscription(
-            Image, '/camera/left/image_rect_color',
-            self.left_image_callback, 10)
-        self.right_image_sub = self.create_subscription(
-            Image, '/camera/right/image_rect_color',
-            self.right_image_callback, 10)
-        self.left_cam_info_sub = self.create_subscription(
-            CameraInfo, '/camera/left/camera_info',
-            self.left_cam_info_callback, 10)
-        self.right_cam_info_sub = self.create_subscription(
-            CameraInfo, '/camera/right/camera_info',
-            self.right_cam_info_callback, 10)
+        # Publisher for planned paths
+        self.path_pub = self.create_publisher(Path, '/isaac_planned_path', 10)
 
-        self.odom_pub = self.create_publisher(
-            Odometry, '/visual_slam/odometry', 10)
-        self.map_pub = self.create_publisher(
-            OccupancyGrid, '/visual_slam/map', 10)
+        # GPU-accelerated planning parameters
+        self.use_gpu = True
+        self.max_iterations = 10000
+        self.planning_resolution = 0.1
 
-        self.bridge = CvBridge()
-        self.latest_left_img = None
-        self.latest_right_img = None
-        self.left_cam_info = None
-        self.right_cam_info = None
+        # Initialize Isaac-specific path planning components
+        self.setup_isaac_planners()
 
-        # Isaac-specific parameters
-        self.processing_queue = []
-        self.max_queue_size = 5
+    def setup_isaac_planners(self):
+        """Initialize GPU-accelerated path planners."""
+        if self.use_gpu:
+            self.get_logger().info("Initializing GPU-accelerated path planners")
+            # Initialize Isaac GPU planners
+            # This would typically use Isaac-specific libraries
+            # For this example, we'll simulate the setup
+            self.gpu_planner_available = True
+        else:
+            self.gpu_planner_available = False
 
-        self.get_logger().info('Isaac Visual SLAM node initialized')
+    def plan_path_gpu(self, start_pose, goal_pose, occupancy_grid):
+        """
+        Plan path using GPU-accelerated algorithms.
 
-    def left_image_callback(self, msg):
-        self.latest_left_img = msg
-        self.process_stereo_pair()
+        Args:
+            start_pose: Starting pose for path planning
+            goal_pose: Goal pose for path planning
+            occupancy_grid: Occupancy grid map for planning
 
-    def right_image_callback(self, msg):
-        self.latest_right_img = msg
-        self.process_stereo_pair()
+        Returns:
+            Path: Planned path from start to goal
+        """
+        if not self.gpu_planner_available:
+            self.get_logger().warning("GPU planner not available, using CPU fallback")
+            return self.plan_path_cpu(start_pose, goal_pose, occupancy_grid)
 
-    def left_cam_info_callback(self, msg):
-        self.left_cam_info = msg
+        # Simulate GPU-accelerated path planning
+        path = Path()
+        path.header.frame_id = "map"
+        path.header.stamp = self.get_clock().now().to_msg()
 
-    def right_cam_info_callback(self, msg):
-        self.right_cam_info = msg
+        # This is a simplified simulation - in reality, this would use Isaac's
+        # GPU-accelerated path planning libraries
+        waypoints = self.compute_gpu_path(start_pose, goal_pose, occupancy_grid)
 
-    def process_stereo_pair(self):
-        if (self.latest_left_img is not None and
-            self.latest_right_img is not None and
-            self.left_cam_info is not None and
-            self.right_cam_info is not None):
+        for waypoint in waypoints:
+            pose_stamped = PoseStamped()
+            pose_stamped.pose.position.x = waypoint[0]
+            pose_stamped.pose.position.y = waypoint[1]
+            pose_stamped.pose.position.z = 0.0
+            path.poses.append(pose_stamped)
 
-            # Convert ROS images to OpenCV format
-            left_cv = self.bridge.imgmsg_to_cv2(self.latest_left_img, 'bgr8')
-            right_cv = self.bridge.imgmsg_to_cv2(self.latest_right_img, 'bgr8')
+        return path
 
-            # Process stereo pair with Isaac-accelerated pipeline
-            # (This would interface with Isaac's GPU-accelerated stereo SLAM)
-            pose = self.accelerated_stereo_slam(left_cv, right_cv)
+def main(args=None):
+    rclpy.init(args=args)
 
-            if pose is not None:
-                self.publish_odometry(pose)
+    path_planner = IsaacPathPlanner()
 
-    def accelerated_stereo_slam(self, left_img, right_img):
-        # Placeholder for Isaac's GPU-accelerated SLAM
-        # In practice, this would call Isaac's optimized functions
+    try:
+        rclpy.spin(path_planner)
+    except KeyboardInterrupt:
         pass
+    finally:
+        path_planner.destroy_node()
+        rclpy.shutdown()
 
-    def publish_odometry(self, pose):
-        odom_msg = Odometry()
-        odom_msg.header.stamp = self.get_clock().now().to_msg()
-        odom_msg.header.frame_id = 'map'
-        odom_msg.child_frame_id = 'base_link'
-
-        # Set pose from SLAM result
-        odom_msg.pose.pose = pose
-        # Set velocity (estimated from pose differences)
-
-        self.odom_pub.publish(odom_msg)
+if __name__ == '__main__':
+    main()
 ```
 
-## Isaac Navigation Parameters
+## Perception-Nav Integration
 
-### Configuration Files
+### Isaac Perception Integration
 
-Isaac navigation uses YAML configuration files similar to Navigation2 but with additional parameters for acceleration:
+Isaac Navigation seamlessly integrates with Isaac perception systems:
 
-```yaml
-# visual_slam_params.yaml
-visual_slam_node:
-  ros__parameters:
-    # Camera parameters
-    rectified_images: true
-    image_width: 640
-    image_height: 480
+- **Visual SLAM**: Direct integration with Isaac Visual SLAM for localization
+- **Obstacle Detection**: Real-time obstacle detection for navigation safety
+- **Semantic Mapping**: Integration of semantic information for improved navigation
 
-    # GPU acceleration parameters
-    enable_gpu_acceleration: true
-    max_num_corners: 1000
-    min_tracked_features: 50
-
-    # SLAM parameters
-    map_frame: "map"
-    odom_frame: "odom"
-    base_frame: "base_link"
-
-    # Loop closure parameters
-    enable_loop_closure: true
-    loop_closure_threshold: 0.5
-```
-
-### Parameter Tuning
-
-Different environments require different parameter configurations:
-
-#### Indoor Environments
-```yaml
-# Indoor navigation parameters
-indoor_navigation:
-  ros__parameters:
-    # Higher accuracy requirements
-    localization_accuracy: 0.05  # 5cm
-    mapping_resolution: 0.025   # 2.5cm per cell
-
-    # Indoor-specific settings
-    max_range: 10.0
-    obstacle_clearing_threshold: 0.4
-    obstacle_inflation_radius: 0.3
-```
-
-#### Outdoor Environments
-```yaml
-# Outdoor navigation parameters
-outdoor_navigation:
-  ros__parameters:
-    # Lower accuracy requirements, larger areas
-    localization_accuracy: 0.2   # 20cm
-    mapping_resolution: 0.1     # 10cm per cell
-
-    # Outdoor-specific settings
-    max_range: 50.0
-    obstacle_clearing_threshold: 1.0
-    obstacle_inflation_radius: 0.8
-```
-
-## Path Planning with Isaac
-
-### GPU-Accelerated Path Planning
-
-Isaac provides GPU-accelerated path planning algorithms:
-
-1. **A* with GPU acceleration**: Parallel path exploration
-2. **Dijkstra with GPU acceleration**: Multi-goal path planning
-3. **RRT* with GPU acceleration**: Sampling-based path planning
-4. **Trajectory optimization**: GPU-accelerated trajectory refinement
-
-### Navigation Actions
-
-Isaac navigation uses ROS 2 actions for navigation tasks:
+### Sensor Fusion for Navigation
 
 ```python
-import rclpy
-from rclpy.action import ActionClient
-from rclpy.node import Node
-
-from nav2_msgs.action import NavigateToPose
-from geometry_msgs.msg import PoseStamped
-
-class IsaacNavigationClient(Node):
+class IsaacSensorFusion:
     def __init__(self):
-        super().__init__('isaac_navigation_client')
-        self._action_client = ActionClient(
-            self,
-            NavigateToPose,
-            'navigate_to_pose'
-        )
+        # Initialize Isaac's sensor fusion capabilities
+        self.lidar_processor = self.initialize_lidar_gpu()
+        self.camera_processor = self.initialize_camera_gpu()
+        self.imu_processor = self.initialize_imu_gpu()
 
-    def send_goal(self, x, y, theta):
-        goal_msg = NavigateToPose.Goal()
-        goal_msg.pose.header.frame_id = 'map'
-        goal_msg.pose.header.stamp = self.get_clock().now().to_msg()
-        goal_msg.pose.pose.position.x = x
-        goal_msg.pose.pose.position.y = y
-        goal_msg.pose.pose.position.z = 0.0
+    def initialize_lidar_gpu(self):
+        """Initialize GPU-accelerated LiDAR processing."""
+        # In practice, this would initialize Isaac's GPU-accelerated LiDAR processing
+        return "Isaac LiDAR Processor"
 
-        # Convert theta to quaternion
-        from tf_transformations import quaternion_from_euler
-        quat = quaternion_from_euler(0, 0, theta)
-        goal_msg.pose.pose.orientation.x = quat[0]
-        goal_msg.pose.pose.orientation.y = quat[1]
-        goal_msg.pose.pose.orientation.z = quat[2]
-        goal_msg.pose.pose.orientation.w = quat[3]
+    def initialize_camera_gpu(self):
+        """Initialize GPU-accelerated camera processing."""
+        # In practice, this would initialize Isaac's GPU-accelerated camera processing
+        return "Isaac Camera Processor"
 
-        self._action_client.wait_for_server()
-        self._send_goal_future = self._action_client.send_goal_async(
-            goal_msg,
-            feedback_callback=self.feedback_callback
-        )
+    def initialize_imu_gpu(self):
+        """Initialize GPU-accelerated IMU processing."""
+        # In practice, this would initialize Isaac's GPU-accelerated IMU processing
+        return "Isaac IMU Processor"
 
-        self._send_goal_future.add_done_callback(self.goal_response_callback)
+    def fused_localization(self, lidar_data, camera_data, imu_data):
+        """
+        Perform fused localization using multiple sensor modalities.
 
-    def goal_response_callback(self, future):
-        goal_handle = future.result()
-        if not goal_handle.accepted:
-            self.get_logger().info('Goal rejected :(')
-            return
+        Args:
+            lidar_data: LiDAR sensor data
+            camera_data: Camera sensor data
+            imu_data: IMU sensor data
 
-        self.get_logger().info('Goal accepted :)')
+        Returns:
+            Pose: Fused localization estimate
+        """
+        # Process sensor data using GPU acceleration
+        lidar_pose = self.process_lidar_data(lidar_data)
+        visual_pose = self.process_camera_data(camera_data)
+        imu_pose = self.process_imu_data(imu_data)
 
-        self._get_result_future = goal_handle.get_result_async()
-        self._get_result_future.add_done_callback(self.get_result_callback)
-
-    def feedback_callback(self, feedback_msg):
-        feedback = feedback_msg.feedback
-        self.get_logger().info(f'Received feedback')
-
-    def get_result_callback(self, future):
-        result = future.result().result
-        self.get_logger().info(f'Result: {result}')
-        rclpy.shutdown()
+        # Fuse poses using weighted fusion
+        fused_pose = self.fuse_poses(lidar_pose, visual_pose, imu_pose)
+        return fused_pose
 ```
 
-## Isaac Perception Integration
+## Performance Optimization
 
-### Multi-sensor Fusion
+### GPU Utilization Strategies
 
-Isaac navigation integrates multiple sensor types:
+To maximize navigation performance with Isaac:
 
-1. **Stereo Cameras**: Depth estimation and visual SLAM
-2. **LiDAR**: Precise distance measurements and mapping
-3. **IMU**: Inertial measurements for odometry
-4. **Wheel Encoders**: Dead reckoning for localization
-5. **GPS**: Absolute positioning for outdoor navigation
+1. **Memory Management**: Efficient GPU memory allocation for large maps
+2. **Batch Processing**: Process multiple planning requests in parallel
+3. **Asynchronous Execution**: Non-blocking execution of computationally intensive tasks
+4. **Multi-resolution Planning**: Use different map resolutions for global vs local planning
 
-### Sensor Processing Pipeline
+### Performance Monitoring
 
-```yaml
-# sensor_fusion_pipeline.yaml
-sensor_fusion:
-  ros__parameters:
-    # Sensor weights for fusion
-    camera_weight: 0.4
-    lidar_weight: 0.3
-    imu_weight: 0.2
-    encoder_weight: 0.1
+```python
+class IsaacNavigationPerformanceMonitor:
+    def __init__(self):
+        self.planning_times = []
+        self.gpu_utilization = []
+        self.memory_usage = []
 
-    # Fusion frequency
-    fusion_rate: 50.0  # Hz
+    def record_planning_time(self, start_time, end_time):
+        """Record path planning performance metrics."""
+        elapsed = (end_time - start_time).nanoseconds / 1e9  # Convert to seconds
+        self.planning_times.append(elapsed)
 
-    # Sensor synchronization
-    enable_sensor_sync: true
-    sync_tolerance: 0.01  # seconds
+    def get_performance_metrics(self):
+        """Get navigation performance metrics."""
+        if not self.planning_times:
+            return {"avg_planning_time": 0.0}
+
+        avg_time = sum(self.planning_times) / len(self.planning_times)
+        min_time = min(self.planning_times)
+        max_time = max(self.planning_times)
+
+        return {
+            "avg_planning_time": avg_time,
+            "min_planning_time": min_time,
+            "max_planning_time": max_time,
+            "num_plans": len(self.planning_times)
+        }
 ```
 
-## Dynamic Obstacle Avoidance
+## Safety and Recovery Behaviors
 
-### Isaac's Approach
+### Isaac Safety Features
 
-Isaac provides advanced dynamic obstacle avoidance:
+Isaac Navigation includes enhanced safety features:
 
-1. **Real-time Detection**: GPU-accelerated object detection
-2. **Trajectory Prediction**: Predicting moving object paths
-3. **Reactive Planning**: Adjusting paths in real-time
-4. **Social Navigation**: Human-aware navigation behaviors
+- **Geofencing**: GPU-accelerated boundary checking
+- **Emergency Stop**: Fast path interruption and replanning
+- **Recovery Behaviors**: Accelerated execution of recovery maneuvers
 
-### Configuration
+### Collision Avoidance
 
-```yaml
-# obstacle_avoidance.yaml
-obstacle_avoidance:
-  ros__parameters:
-    # Dynamic obstacle detection
-    enable_dynamic_obstacles: true
-    dynamic_obstacle_timeout: 2.0
-    max_obstacle_velocity: 2.0  # m/s
+```python
+class IsaacCollisionAvoidance:
+    def __init__(self):
+        self.safe_distance = 0.5  # meters
+        self.reactivity = 0.8  # How quickly to react to obstacles
 
-    # Collision avoidance
-    minimum_distance_threshold: 0.5  # m
-    safety_factor: 1.5
+    def check_collision_risk(self, path, obstacles):
+        """Check for collision risk along the path."""
+        # Use GPU acceleration to check path against obstacle cloud
+        collision_risk = self.gpu_check_path_collision(path, obstacles)
+        return collision_risk
 
-    # Prediction parameters
-    prediction_horizon: 3.0  # seconds
-    prediction_steps: 10
+    def generate_recovery_path(self, current_pose, obstacles):
+        """Generate recovery path when collision is imminent."""
+        # Use Isaac's GPU-accelerated recovery planners
+        recovery_path = self.gpu_compute_escape_route(current_pose, obstacles)
+        return recovery_path
 ```
 
-## Isaac Navigation in Different Scenarios
+## Integration Examples
 
-### Warehouse Navigation
+### Isaac Navigation Launch File
 
-For warehouse environments, Isaac navigation can be optimized for:
+```xml
+<launch>
+  <!-- Isaac Navigation Stack -->
+  <include file="$(find-pkg-share nav2_bringup)/launch/navigation_launch.py">
+    <arg name="use_sim_time" value="True"/>
+    <arg name="params_file" value="$(find-pkg-share my_robot_navigation)/config/isaac_nav_params.yaml"/>
+  </include>
 
-- **Structured environments**: Pre-built maps and known layouts
-- **Dynamic obstacles**: Moving people and vehicles
-- **Fleet coordination**: Multiple robots working together
-- **Efficiency**: Optimized paths for logistics tasks
+  <!-- Isaac-specific components -->
+  <node pkg="isaac_ros_visual_slam" exec="visual_slam_node" name="visual_slam">
+    <param name="enable_rectified_pose" value="True"/>
+    <param name="map_frame" value="map"/>
+    <param name="publish_odom_tf" value="True"/>
+  </node>
 
-### Outdoor Navigation
-
-For outdoor environments:
-
-- **GPS integration**: Absolute positioning for large areas
-- **Terrain adaptation**: Adjusting for different ground types
-- **Weather considerations**: Handling lighting and weather changes
-- **Large-scale mapping**: Managing large environment maps
-
-### Indoor Navigation
-
-For indoor environments:
-
-- **Visual features**: Leveraging distinctive visual landmarks
-- **Multi-floor navigation**: Handling elevators and stairs
-- **Human interaction**: Safe navigation around people
-- **Localization accuracy**: High precision requirements
-
-## Deployment on NVIDIA Platforms
-
-### Jetson Platforms
-
-Isaac navigation can be deployed on NVIDIA Jetson platforms:
-
-- **Jetson Orin**: High-performance navigation with multiple sensors
-- **Jetson AGX Xavier**: Balanced performance for complex tasks
-- **Jetson Nano**: Lightweight navigation for simple tasks
-
-### Configuration for Jetson
-
-```yaml
-# jetson_navigation.yaml
-jetson_navigation:
-  ros__parameters:
-    # Performance optimization for Jetson
-    enable_gpu_acceleration: true
-    gpu_device_id: 0
-
-    # Memory management
-    max_map_size: 200  # meters
-    memory_limit: 4096  # MB
-
-    # Power management
-    enable_power_management: true
-    power_mode: "MAXN"  # MAXN or DEFAULT
+  <!-- Isaac perception integration -->
+  <node pkg="isaac_ros_detectnet" exec="isaac_ros_detectnet" name="detectnet">
+    <param name="input_topic" value="/camera/color/image_rect_color"/>
+    <param name="output_topic" value="/detectnet/detections"/>
+    <param name="model_name" value="ssd_mobilenet_v2_coco"/>
+  </node>
+</launch>
 ```
 
 ## Best Practices
 
-### Performance Optimization
+### Configuration Guidelines
 
-1. **GPU Utilization**: Monitor and optimize GPU usage
-2. **Memory Management**: Efficient memory allocation and deallocation
-3. **Sensor Synchronization**: Proper timing of sensor data
-4. **Parameter Tuning**: Environment-specific parameter optimization
+1. **Map Resolution**: Balance accuracy with performance - higher resolution maps take more GPU memory
+2. **Costmap Layers**: Use only necessary layers to reduce computation
+3. **Planning Frequency**: Adjust based on robot speed and environment complexity
+4. **Recovery Behaviors**: Configure appropriate recovery behaviors for your robot
 
-### Safety Considerations
+### Performance Tuning
 
-1. **Fallback Mechanisms**: Safe stopping when navigation fails
-2. **Human Safety**: Maintaining safe distances from people
-3. **Environmental Safety**: Avoiding damage to surroundings
-4. **System Monitoring**: Continuous monitoring of navigation performance
-
-### Testing and Validation
-
-1. **Simulation Testing**: Extensive testing in Isaac Sim
-2. **Progressive Deployment**: Start with simple scenarios
-3. **Safety Testing**: Validate safety mechanisms
-4. **Performance Testing**: Verify real-time requirements
+- Monitor GPU utilization to ensure efficient usage
+- Adjust map resolution based on navigation requirements
+- Fine-tune costmap inflation parameters for smooth navigation
+- Configure appropriate planning frequencies for your robot's speed
 
 ## Key Takeaways
 
-- Isaac navigation provides GPU-accelerated path planning and SLAM
-- Integration with multiple sensor types improves navigation robustness
-- Proper parameter tuning is essential for different environments
-- Safety mechanisms are crucial for real-world deployment
-- Jetson platforms enable edge deployment of Isaac navigation
+- Isaac Navigation provides GPU-accelerated path planning and obstacle avoidance
+- Integration with Isaac perception systems enhances navigation capabilities
+- Proper configuration is essential for optimal performance
+- Safety and recovery behaviors ensure robust navigation
+- Performance monitoring helps optimize navigation parameters
+
+## Cross-References
+
+This navigation systems content connects with:
+- [Week 1-3: ROS 2 Foundations](../module-1-ros-foundations/) - for communication architecture
+- [Week 4-5: Simulation](../module-2-gazebo-unity/) - for navigation in simulation environments
+- [Week 6: Isaac Platform Overview](./week-6-isaac-platform.md) - for platform integration
+- [Week 8-9: Vision Processing](../module-4-vla-systems/week-8-vision-processing.md) - for perception integration
+- [Week 10-14: Humanoid Control](../module-4-vla-systems/week-10-humanoid-control.md) - for humanoid navigation applications
 
 ## Practice Exercises
 
-### Exercise 1: Isaac Visual SLAM Implementation
-1. Set up Isaac ROS Visual SLAM nodes with a stereo camera setup (real or simulated).
-2. Configure the SLAM parameters for indoor environment mapping.
-3. Navigate through a space while building a map and tracking your position.
-4. Save and visualize the resulting map using RViz2 and Isaac tools.
+### Exercise 1: Isaac Navigation Configuration
+1. Set up Isaac Navigation on your robot platform
+2. Configure GPU-accelerated costmaps and planners
+3. Test navigation performance with and without GPU acceleration
+4. Compare path planning times and success rates
 
-### Exercise 2: GPU-Accelerated Path Planning
-1. Implement a navigation system using Isaac's GPU-accelerated path planning.
-2. Compare the path planning performance with standard Navigation2 planners.
-3. Measure and document the performance improvements achieved through GPU acceleration.
-4. Test navigation in various environments (open spaces, narrow corridors, cluttered areas).
+### Exercise 2: Perception-Nav Integration
+1. Integrate Isaac perception nodes with navigation stack
+2. Test navigation with visual SLAM localization
+3. Evaluate navigation performance in dynamic environments
+4. Analyze the impact of perception quality on navigation success
 
-### Exercise 3: Multi-Sensor Fusion Navigation
-1. Integrate multiple sensor types (camera, LiDAR, IMU) with Isaac navigation.
-2. Configure sensor fusion parameters to optimize localization accuracy.
-3. Test navigation performance with different sensor combinations.
-4. Analyze how each sensor contributes to overall navigation robustness.
-
-### Exercise 4: Dynamic Obstacle Avoidance
-1. Set up Isaac's dynamic obstacle avoidance system in a simulated environment.
-2. Configure the system to detect and avoid moving obstacles.
-3. Test navigation performance with various obstacle types and speeds.
-4. Fine-tune parameters to balance safety and navigation efficiency.
+### Exercise 3: Performance Optimization
+1. Monitor GPU utilization during navigation tasks
+2. Tune navigation parameters for optimal performance
+3. Test navigation in various map complexities
+4. Document performance metrics and optimization strategies
 
 ### Discussion Questions
-1. How does GPU acceleration specifically improve the performance of SLAM algorithms compared to CPU-only implementations?
-2. What are the key differences between Isaac's navigation stack and the standard Navigation2 stack in terms of capabilities and performance?
-3. How do you determine the appropriate parameters for different navigation environments (indoor, outdoor, warehouse)?
-4. What safety considerations are most important when deploying Isaac navigation on physical robots?
-
-### Challenge Exercise
-Design and implement a complete navigation system for a warehouse robot using Isaac platform:
-- Create a detailed warehouse map using Isaac Visual SLAM
-- Integrate multiple sensors (stereo camera, LiDAR, IMU) for robust navigation
-- Implement dynamic obstacle avoidance for humans and other vehicles
-- Set up fleet coordination if multiple robots are available
-- Deploy the system on a Jetson platform and test in a simulated warehouse environment
-- Document the system architecture, performance metrics, and any challenges encountered
+1. How does GPU acceleration impact path planning performance compared to CPU-only approaches?
+2. What are the key differences between Isaac Navigation and traditional ROS 2 Navigation2?
+3. How do perception and navigation integration benefit from GPU acceleration?
+4. What are the main challenges when deploying Isaac Navigation on physical robots?
 
 ## References
 
-[Isaac Bibliography](/docs/references/isaac-bibliography.md)
+[Isaac Navigation Bibliography](../../references/isaac-bibliography.md)

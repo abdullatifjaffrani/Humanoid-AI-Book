@@ -57,5 +57,5 @@ A: The capstone is challenging but achievable, designed to demonstrate mastery o
 
 For additional questions, see:
 - [Course Introduction](../intro.md)
-- [Technical References](../references/)
+- [Technical References](../references/ros-bibliography.md)
 - [Troubleshooting Guide](./troubleshooting.md)

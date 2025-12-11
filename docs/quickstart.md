@@ -75,6 +75,6 @@ This comprehensive textbook guides you through a 14-week curriculum covering:
 
 - Check the [Glossary](./glossary.md) for technical terms
 - Review [FAQ](./resources/faq.md) for common questions
-- Access [additional resources](./resources/) for extended learning
+- Access [additional resources](./resources/faq.md) for extended learning
 
 Get started now by proceeding to the [Introduction](./intro.md) or jumping directly to your first module!

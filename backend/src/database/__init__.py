@@ -1,1 +1,1 @@
-$(cat backend/src/database/__init__.py)
+# Database package for the RAG Chatbot application

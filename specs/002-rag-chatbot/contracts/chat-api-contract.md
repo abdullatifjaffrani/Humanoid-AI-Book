@@ -1,0 +1,1 @@
+$(cat specs/002-rag-chatbot/contracts/chat-api-contract.md)

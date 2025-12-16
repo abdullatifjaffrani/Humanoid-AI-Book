@@ -1,0 +1,1 @@
+$(cat backend/scripts/setup_vector_store.py)

@@ -1,0 +1,1 @@
+$(cat backend/tests/contract/test_chat_api.py)

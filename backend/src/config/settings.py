@@ -1,0 +1,1 @@
+$(cat backend/src/config/settings.py)

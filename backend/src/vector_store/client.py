@@ -1,0 +1,1 @@
+$(cat backend/src/vector_store/client.py)

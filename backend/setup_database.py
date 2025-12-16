@@ -1,0 +1,1 @@
+$(cat backend/setup_database.py)

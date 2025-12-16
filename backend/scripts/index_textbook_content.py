@@ -1,0 +1,1 @@
+$(cat backend/scripts/index_textbook_content.py)
